@@ -1,5 +1,13 @@
 # simple-weather
 
+## Done
+* Get data from [Open Weather Map](https://openweathermap.org) with a simple call
+
+## TO DO
+* __Show data__
+* Store data (maybe store it in a cookie creating a timestamp to renew the info past 10 minutes).
+
+
 ## Project setup
 ```
 yarn install
