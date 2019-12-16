@@ -18,7 +18,7 @@ export default {
             API: process.env.VUE_APP_WEATHER_API,
             cityID: '2509954',
             daysCount: 40
-        }
+        };
     },
     methods: {
         callApi() {
@@ -31,7 +31,7 @@ export default {
     mounted() {
         this.callApi();
     }
-}
+};
 </script>
 
 <style>
