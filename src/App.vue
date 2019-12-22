@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import Weather from './components/Weather.vue';
+import Weather from './components/Weather/Weather.vue';
 import valenciaWeather from './assets/valencia.json';
 
 export default {
@@ -30,9 +30,5 @@ export default {
     text-align: center;
     color: #2c3e50;
     margin-top: 60px;
-
-    div {
-        color: red;
-    }
 }
 </style>

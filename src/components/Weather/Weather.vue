@@ -2,7 +2,11 @@
     <section>
         <div>WEATHER</div>
         <div v-for="item in weatherData.list" :key="item.dt">
-            {{ item.dt_txt }}: {{item.weather[0].main}}: {{item.main.temp}}ºC
+            <span>{{ item.dt_txt }}</span>
+            :
+            <span>{{item.weather[0].main}}</span>
+            :
+            <span>{{item.main.temp}}ºC</span>
         </div>
     </section>
 </template>
@@ -17,5 +21,5 @@ export default {
 </script>
 
 <style>
-
+    @import 'Weather.css';
 </style>
