@@ -8,28 +8,27 @@
 </template>
 
 <script>
-import axios from 'axios';
+import Repository from '@/repositories/RepositoryFactory';
+const FiveDaysRepository = Repository.get('fiveDays');
 
 export default {
     name: 'WeatherWithApi',
     data() {
         return {
-            info: null,
+            info: {},
             API: process.env.VUE_APP_WEATHER_API,
             cityID: '2509954',
             daysCount: 40
         };
     },
     methods: {
-        callApi() {
-            axios.get(`http://api.openweathermap.org/data/2.5/forecast?id=${this.cityID}&cnt=${this.daysCount}&units=metric&APPID=${this.API}`)
-                .then(response => {
-                    this.info = response.data;
-                });
+        getFiveDays: async function() {
+            const {data} = await FiveDaysRepository.get(this.cityID, this.daysCount, this.API);
+            this.info = data;
         }
     },
     mounted() {
-        this.callApi();
+        this.getFiveDays();
     }
 };
 </script>

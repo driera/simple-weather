@@ -2,11 +2,13 @@
     <div id="app">
         <img alt="Vue logo" src="./assets/logo.png">
         <weather :weatherData="rawData"/>
+        <weather-with-api/>
     </div>
 </template>
 
 <script>
 import Weather from './components/Weather/Weather.vue';
+import WeatherWithApi from './components/WeatherWithApi';
 import valenciaWeather from './assets/valencia.json';
 
 export default {
@@ -17,7 +19,8 @@ export default {
         };
     },
     components: {
-        Weather
+        Weather,
+        WeatherWithApi
     }
 };
 </script>
