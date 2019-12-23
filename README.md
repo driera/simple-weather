@@ -1,11 +1,14 @@
 # simple-weather
 
-## Done
+## DONE
 * Get data from [Open Weather Map](https://openweathermap.org) with a simple call
-* __Show data__
+* Show data
+* Add repository factory to manage different api calls
+* __Add data fallback in case of returned error by API__
 
 ## TO DO
-* Store data (maybe store it in a cookie creating a timestamp to renew the info past 10 minutes).
+* Store data (maybe store it in a cookie / localstorage creating a timestamp to renew the info past 10 minutes).
+* Deploy everything to netlify
 
 
 ## Project setup

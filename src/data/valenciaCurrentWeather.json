@@ -1,0 +1,43 @@
+{
+    "cod":200,
+    "id":2509954,
+    "name":"Valencia",
+    "coord":{
+        "lon":-0.38,
+        "lat":39.47
+    },
+    "weather":[
+        {
+            "id":800,
+            "main":"Clear",
+            "description":"cielo claro",
+            "icon":"01d"
+        }
+    ],
+    "base":"stations",
+    "main":{
+        "temp":18.95,
+        "feels_like":14.88,
+        "temp_min":16.11,
+        "temp_max":20.56,
+        "pressure":1025,
+        "humidity":34
+    },
+    "visibility":10000,
+    "wind":{
+        "speed":3.6,
+        "deg":260
+    },
+    "clouds":{
+        "all":0
+    },
+    "dt":1577105086,
+    "sys":{
+        "type":1,
+        "id":6432,
+        "country":"ES",
+        "sunrise":1577085541,
+        "sunset":1577119302
+    },
+    "timezone":3600
+}
