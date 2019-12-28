@@ -1,12 +1,23 @@
-import Client from './Clients/axiosClient';
-const LANG = 'es';
+import Client from '@/repositories/Clients/axiosClient';
+import fallbackWeather from '@/data/valenciaFiveDays.json';
+const api_key = process.env.VUE_APP_WEATHER_API;
+const PATH = `/forecast?id={id}&units=metric&lang=es&cnt={count}&APPID=${api_key}`;
 
 /* OpenWeather documentation
  * https://openweathermap.org/forecast5
  */
 
 export default {
-    get(id, count, api_key) {
-        return Client.get(`/forecast?id=${id}&lang=${LANG}&cnt=${count}&units=metric&APPID=${api_key}`);
+    get(id, count) {
+        const URL = PATH
+            .replace('{id}', id)
+            .replace('{count}', count);
+
+        return Client.get(URL)
+            .then(response => response.data)
+            .catch(error => {
+                console.log(`${error}. Loading fallback`);
+                return fallbackWeather;
+            });
     }
 };

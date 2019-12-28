@@ -1,8 +1,13 @@
-div {
-    color: green;
-
-    & span {
-        color: color-mod(hsl(1, 100%, 50%) a(50%));
-    }
+.weather-container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    max-height: 55vh;
+    padding: 30px;
+    background: hsl(210, 50%, 95%)
 }
-
+.weather-item {
+    flex: 0 0 50px;
+    color: hsl(100, 0%, 10%);
+}
