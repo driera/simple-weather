@@ -2,12 +2,15 @@
     <section>
         <div>WEATHER With API Call to Open Weather Map</div>
         <div class="weather-container">
-            <div class="weather-item" v-for="item in info" :key="item.id">
-                <span>{{ item.time }}</span>
-                :
-                <span>{{item.state}}</span>
-                :
-                <span>{{item.temperature}}ºC</span>
+            <div class="weather-date" v-for="(date, key) in info" :key="key">
+                <h1>{{ key}}</h1>
+                <div class="weather-item" v-for="item in date" :key="item.id">
+                    <span>{{ item.time }}</span>
+                    :
+                    <span>{{item.state}}</span>
+                    :
+                    <span>{{item.temperature}}ºC</span>
+                </div>
             </div>
         </div>
     </section>
@@ -30,6 +33,8 @@ export default {
     methods: {
         async getFiveDays() {
             this.info = await FiveDaysRepository.get(this.cityID, this.daysCount);
+            console.log(this.info);
+
         },
         async getCurrentWeather() {
             const data = await CurrentWeatherRepository.get(this.cityID);

@@ -6,7 +6,8 @@
 * Add repository factory to manage different api calls
 * Add data fallback in case of returned error by API
 * Remove API logic from client
-* __Add data models for api calls__
+* Add data models for api calls
+* __Group FiveDays collection by date__
 
 ## TO DO
 * Store data (maybe store it in a cookie / localstorage creating a timestamp to renew the info past 10 minutes).

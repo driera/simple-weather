@@ -1,5 +1,5 @@
 export default function(data) {
-    return data.list.map(element => ({
+    const collection = data.list.map(element => ({
         'pressure': element.main.pressure,
         'temperature': element.main.temp,
         'temperatureMin': element.main.temp_min,
@@ -11,4 +11,13 @@ export default function(data) {
         'time': element.dt_txt,
         'id': element.dt
     }));
+
+    return collection.reduce((prev, current) => {
+        const timeDay = current.time.split(' ')[0];
+        const timeHour = current.time.split(' ')[1];
+
+        prev[timeDay] = (prev[timeDay] || []).concat(current);
+        current.time = timeHour;
+        return prev;
+    }, {});
 }
