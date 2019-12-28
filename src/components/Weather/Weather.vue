@@ -2,12 +2,12 @@
     <section>
         <div>WEATHER With API Call to Open Weather Map</div>
         <div class="weather-container">
-            <div class="weather-item" v-for="item in info.list" :key="item.dt">
-                <span>{{ item.dt_txt }}</span>
+            <div class="weather-item" v-for="item in info" :key="item.id">
+                <span>{{ item.time }}</span>
                 :
-                <span>{{item.weather[0].main}}</span>
+                <span>{{item.state}}</span>
                 :
-                <span>{{item.main.temp}}ºC</span>
+                <span>{{item.temperature}}ºC</span>
             </div>
         </div>
     </section>
@@ -19,7 +19,7 @@ const FiveDaysRepository = Repository.get('fiveDays');
 const CurrentWeatherRepository = Repository.get('currentWeather');
 
 export default {
-    name: 'WeatherWithApi',
+    name: 'Weather',
     data() {
         return {
             info: {},

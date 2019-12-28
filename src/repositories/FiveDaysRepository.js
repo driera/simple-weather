@@ -1,5 +1,6 @@
 import Client from '@/repositories/Clients/axiosClient';
 import fallbackWeather from '@/data/valenciaFiveDays.json';
+import Weather from '@/domain/models/FiveDays';
 const api_key = process.env.VUE_APP_WEATHER_API;
 const PATH = `/forecast?id={id}&units=metric&lang=es&cnt={count}&APPID=${api_key}`;
 
@@ -14,10 +15,10 @@ export default {
             .replace('{count}', count);
 
         return Client.get(URL)
-            .then(response => response.data)
+            .then(response => new Weather(response.data))
             .catch(error => {
                 console.log(`${error}. Loading fallback`);
-                return fallbackWeather;
+                return new Weather(fallbackWeather);
             });
     }
 };
