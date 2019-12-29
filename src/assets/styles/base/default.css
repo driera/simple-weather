@@ -11,10 +11,6 @@ textarea {
     @apply --container;
 }
 
-.main-section {
-    @apply --main-section;
-}
-
 body {
     width: 100%;
     font-family: var(--primary-font);

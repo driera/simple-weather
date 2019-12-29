@@ -21,6 +21,6 @@ export default {
 </script>
 
 <style>
-    @import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+    @import url('https://fonts.googleapis.com/css?family=Raleway:200,300,400,400i,600,800&display=swap');
     @import './assets/styles/styles.css';
 </style>

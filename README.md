@@ -8,12 +8,13 @@
 * Remove API logic from client
 * Add data models for api calls
 * Group FiveDays collection by date
-* __Add some layout__
+* Add some layout
+* __Add current weather view with basic styles__
 
 ## TO DO
+* Add weather icons [Climacons](http://adamwhitcroft.com/climacons/)
 * Store data (maybe store it in a cookie / localstorage creating a timestamp to renew the info past 10 minutes).
 * Deploy everything to netlify
-* Add weather icons [Climacons](http://adamwhitcroft.com/climacons/)
 
 ## Project setup
 ```
