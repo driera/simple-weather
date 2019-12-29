@@ -1,0 +1,19 @@
+/* Breakpoints */
+@custom-media --max-mobile (width < 600px);
+@custom-media --min-tablet (width >= 600px);
+@custom-media --max-tablet (width < 960px);
+@custom-media --min-desktop (width >= 960px);
+@custom-media --max-desktop (width < 1100px);
+@custom-media --min-desktop-large (width >= 1100px);
+@custom-media --min-desktop-xlarge (width >= 1280px);
+@custom-media --min-desktop-xxlarge (width >= 1440px);
+@custom-media --min-desktop-xxxlarge (width >= 1600px);
+
+:root {
+    /* Colors */
+    --main-color: #0099CC;
+    --dark-color: #111111;
+
+    /* Typography */
+    --primary-font: 'Montserrat', sans-serif;
+}

@@ -1,0 +1,13 @@
+/*
+    * Create @font-face with transfonter tool (transfonter.org)
+    * with TTF, WOFF, SVG, EOT and WOFF2 formats, add here the
+    * generated styles and the fonts to "/web/fonts" folder
+    *
+    * IMPORTANT:
+    * add "font-display: swap;" to your custom fonts
+    * It allows the browser to use the fallback font
+    * before it loads your font.
+    * We ensure an earlier first render of the page.
+    * https://css-tricks.com/almanac/properties/f/font-display/
+    * https://css-tricks.com/font-display-masses/
+*/

@@ -41,7 +41,7 @@ export default {
             console.log(data);
         }
     },
-    mounted() {
+    created() {
         this.getFiveDays();
         this.getCurrentWeather();
     }
