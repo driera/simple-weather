@@ -9,10 +9,10 @@
 * Add data models for api calls
 * Group FiveDays collection by date
 * Add some layout
-* __Add current weather view with basic styles__
+* Add current weather view with basic styles
+* __Add weather icons [Climacons](http://adamwhitcroft.com/climacons/)__
 
 ## TO DO
-* Add weather icons [Climacons](http://adamwhitcroft.com/climacons/)
 * Store data (maybe store it in a cookie / localstorage creating a timestamp to renew the info past 10 minutes).
 * Deploy everything to netlify
 

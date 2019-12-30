@@ -1,5 +1,6 @@
 import Vue from 'vue';
 import App from './App.vue';
+import '@/services/svg-registration';
 
 Vue.config.productionTip = false;
 

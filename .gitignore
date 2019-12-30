@@ -2,6 +2,7 @@
 node_modules
 /dist
 city.list.json
+src/assets/svg/optimized
 
 # local env files
 .env.local

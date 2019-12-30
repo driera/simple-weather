@@ -32,7 +32,9 @@
                         {{info.clouds}}
                         <span class="current-details--units">%</span>
                     </div>
-                    <div class="current-details--icon"></div>
+                    <div class="current-details--icon">
+                        <icon-cloud/>
+                    </div>
                 </div>
                 <div class="current-details--item">
                     <div class="current-details--subtitle">Humedad</div>
