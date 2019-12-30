@@ -1,3 +1,3 @@
-<template><svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" class="icon icon-wind" role="img" aria-labelledby="icon-wind-description"><title id="icon-wind-description">wind</title>
-    <path d="M65.999 52h-3a2 2 0 110-3.999h3a2 2 0 000-3.999 2 2 0 11.402-3.959c3.121.211 5.596 2.783 5.596 5.959A5.998 5.998 0 0165.999 52zm-10-3.999H34.002a2 2 0 000 3.999h21.997a6 6 0 016 6c0 3.176-2.475 5.748-5.596 5.959A2 2 0 1055.999 56H34.002a6 6 0 01-5.999-5.999c0-3.175 2.475-5.747 5.596-5.959a2.07 2.07 0 01.403-.04h21.997a2 2 0 000-4 2 2 0 11.404-3.959c3.121.211 5.596 2.783 5.596 5.959a6 6 0 01-6 5.999z"/>
+<template><svg data-name="Capa 1" xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" class="icon icon-wind" role="img" aria-labelledby="icon-wind-description"><title id="icon-wind-description">wind</title>
+    <path d="M74 53h-4.5a3 3 0 010-6H74a3 3 0 000-6 3 3 0 11.6-5.94A9 9 0 0174 53zm-15-6H26a3 3 0 000 6h33a9 9 0 01.6 17.94 2.91 2.91 0 01-.6.06 3 3 0 010-6 3 3 0 000-6H26a9 9 0 01-.6-17.94A3 3 0 0126 41h33a3 3 0 000-6 3 3 0 010-6 2.91 2.91 0 01.6.06A9 9 0 0159 47z"/>
 </svg></template>

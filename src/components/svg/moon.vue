@@ -1,3 +1,3 @@
-<template><svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" class="icon icon-moon" role="img" aria-labelledby="icon-moon-description"><title id="icon-moon-description">moon</title>
-    <path d="M50 61.998c-6.627 0-11.999-5.372-11.999-11.998 0-6.627 5.372-11.999 11.999-11.999.755 0 1.491.078 2.207.212a7.988 7.988 0 00-.208 1.788 8 8 0 008 7.999c.615 0 1.212-.076 1.788-.208.133.717.211 1.452.211 2.208 0 6.626-5.372 11.998-11.998 11.998zm-1.788-19.79c-3.556.813-6.211 3.989-6.211 7.792A8 8 0 0050 57.999c3.802 0 6.978-2.655 7.791-6.211a11.998 11.998 0 01-9.579-9.58z"/>
+<template><svg data-name="Capa 1" xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" class="icon icon-moon" role="img" aria-labelledby="icon-moon-description"><title id="icon-moon-description">moon</title>
+    <path d="M50 68a18 18 0 113.31-35.68A11.84 11.84 0 0053 35a12 12 0 0012 12 11.84 11.84 0 002.68-.31A17.94 17.94 0 0150 68zm-2.68-29.69a12 12 0 1014.37 14.37 18 18 0 01-14.37-14.37z"/>
 </svg></template>

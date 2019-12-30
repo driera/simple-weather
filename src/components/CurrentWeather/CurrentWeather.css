@@ -17,7 +17,7 @@
 }
 
 .current-main {
-    padding: 20px;
+    padding: 20px 0;
     margin-bottom: 20px;
 }
 
@@ -33,7 +33,6 @@
 
 .current-main--temp {
     padding-top: 40px;
-    padding-bottom: 20px;
 }
 
 .current-main--temp-text {
@@ -60,11 +59,9 @@
 }
 
 .current-main--conditions-icon {
-    display: inline-block;
-    width: 15px;
-    height: 15px;
+    display: block;
     margin-right: 5px;
-    border: .1px solid var(--light-color);
+    font-size: 40px;
 }
 
 .current-details {
@@ -101,19 +98,22 @@
     flex-direction: row;
     flex-wrap: wrap;
     align-items: center;
-    padding: 10px;
+    padding: 20px 10px 10px;
     margin-bottom: 10px;
     background: color-mod(var(--light-color) a(5%));
     border-radius: 3px;
 }
 
 .current-details--subtitle {
-    flex: 0 0 100%;
+    position: absolute;
+    bottom: 100%;
+    left: 0;
     font-size: 12px;
     font-weight: 300;
 }
 
 .current-details--content {
+    position: relative;
     flex: 1 1 auto;
     font-size: 18px;
     font-weight: 800;
@@ -129,9 +129,11 @@
 
 .current-details--icon {
     flex: 0 0 15px;
-    width: 15px;
-    height: 15px;
-    border: .1px solid var(--light-color);
+    font-size: 40px;
+
+    svg {
+        display: block;
+    }
 }
 
 .current-log {

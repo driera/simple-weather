@@ -1,5 +1,6 @@
 import moment from 'moment';
 import getDirection from '@/services/getDirection';
+import getIcon from '@/services/getIcon';
 
 export default function(data) {
     return {
@@ -10,6 +11,7 @@ export default function(data) {
         'humidity': data.main.humidity,
         'state': data.weather[0].main,
         'stateDescription': data.weather[0].description,
+        'stateIcon': `icon-${getIcon(data.weather[0].icon)}`,
         'windSpeed': data.wind.speed,
         'windAngle': getDirection(data.wind.deg),
         'clouds': data.clouds.all,

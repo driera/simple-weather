@@ -1,3 +1,3 @@
-<template><svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" class="icon icon-cloud-dark" role="img" aria-labelledby="icon-cloud-dark-description"><title id="icon-cloud-dark-description">cloud dark</title>
-    <path d="M71.94 34.64a11.36 11.36 0 00-2 .21 16 16 0 00-27.22-1.14A16 16 0 0044 65.64h16a12 12 0 0010.9-7H72a12 12 0 000-24zm-12 27H44a12 12 0 01-3.34-23.52 11.54 11.54 0 011.57-.35h.16l.65-.07H44a12 12 0 0111.64 9.29 8 8 0 114.28 14.71z"/>
+<template><svg data-name="Capa 1" xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" class="icon icon-cloud-dark" role="img" aria-labelledby="icon-cloud-dark-description"><title id="icon-cloud-dark-description">cloud dark</title>
+    <path d="M73.86 28.88a17.76 17.76 0 00-3 .32A24 24 0 0030 27.49a24 24 0 002 47.89h24a18 18 0 0016.3-10.5H74a18 18 0 100-36zm-18 40.5H32a18 18 0 01-5-35.28 17.3 17.3 0 012.35-.52h.24l1-.11H32a18 18 0 0117.41 13.94 12 12 0 116.42 22.06z"/>
 </svg></template>

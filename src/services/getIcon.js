@@ -1,5 +1,6 @@
 export default code => {
-    let icons = [
+    let iconName = '';
+    [
         {'code': '01d', 'icon': 'sun'},
         {'code': '01n', 'icon': 'moon'},
         {'code': '02d', 'icon': 'cloud-sun'},
@@ -17,5 +18,12 @@ export default code => {
         {'code': '13d', 'icon': 'snowflake'},
         {'code': '50d', 'icon': 'cloud-fog'},
         {'code': '50n', 'icon': 'cloud-fog'}
-    ];
+    ].forEach(element => {
+        if (element.code == code) {
+            iconName = element.icon;
+            return;
+        }
+    });
+
+    return iconName;
 };

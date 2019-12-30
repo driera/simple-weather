@@ -3,6 +3,7 @@ node_modules
 /dist
 city.list.json
 src/assets/svg/optimized
+design
 
 # local env files
 .env.local

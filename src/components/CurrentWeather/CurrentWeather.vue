@@ -1,5 +1,5 @@
 <template>
-    <div class="current">
+    <div v-if="info" class="current">
         <div class="container">
             <div class="current-main">
                 <div class="current-main--location">{{cityName}}</div>
@@ -9,7 +9,7 @@
                     <span class="current-main--temp-symbol">º</span>
                 </div>
                 <div class="current-main--conditions">
-                    <div class="current-main--conditions-icon"></div>
+                    <component :is="info.stateIcon" class="current-main--conditions-icon"></component>
                     <div class="current-main--conditions-text">{{info.stateDescription}}</div>
                 </div>
             </div>
@@ -18,39 +18,45 @@
                     <span>Detalles</span>
                 </div>
                 <div class="current-details--item">
-                    <div class="current-details--subtitle">Viento</div>
                     <div class="current-details--content">
+                        <div class="current-details--subtitle">Viento</div>
                         <span class="current-details--sub">{{info.windAngle}}</span>
                         {{info.windSpeed}}
                         <span class="current-details--units">km/h</span>
                     </div>
-                    <div class="current-details--icon"></div>
+                    <div class="current-details--icon">
+                        <icon-wind class="current-details--icon"></icon-wind>
+                    </div>
                 </div>
                 <div class="current-details--item">
-                    <div class="current-details--subtitle">Nubosidad</div>
                     <div class="current-details--content">
+                        <div class="current-details--subtitle">Nubosidad</div>
                         {{info.clouds}}
                         <span class="current-details--units">%</span>
                     </div>
                     <div class="current-details--icon">
-                        <icon-cloud/>
+                        <icon-cloud></icon-cloud>
                     </div>
                 </div>
                 <div class="current-details--item">
-                    <div class="current-details--subtitle">Humedad</div>
                     <div class="current-details--content">
+                        <div class="current-details--subtitle">Humedad</div>
                         {{info.humidity}}
                         <span class="current-details--units">%</span>
                     </div>
-                    <div class="current-details--icon"></div>
+                    <div class="current-details--icon">
+                        <icon-raindrop></icon-raindrop>
+                    </div>
                 </div>
                 <div class="current-details--item">
-                    <div class="current-details--subtitle">Presión</div>
                     <div class="current-details--content">
+                        <div class="current-details--subtitle">Presión</div>
                         {{info.pressure}}
                         <span class="current-details--units">mBar</span>
                     </div>
-                    <div class="current-details--icon"></div>
+                    <div class="current-details--icon">
+                        <icon-pressure></icon-pressure>
+                    </div>
                 </div>
             </div>
             <div class="current-details">
@@ -58,14 +64,22 @@
                     <span>Salida/Puesta de sol</span>
                 </div>
                 <div class="current-details--item">
-                    <div class="current-details--subtitle">Salida sol</div>
-                    <div class="current-details--content">{{info.sunrise}}</div>
-                    <div class="current-details--icon"></div>
+                    <div class="current-details--content">
+                        <div class="current-details--subtitle">Salida sol</div>
+                        {{info.sunrise}}
+                    </div>
+                    <div class="current-details--icon">
+                        <icon-sunrise></icon-sunrise>
+                    </div>
                 </div>
                 <div class="current-details--item">
-                    <div class="current-details--subtitle">Puesta sol</div>
-                    <div class="current-details--content">{{info.sunset}}</div>
-                    <div class="current-details--icon"></div>
+                    <div class="current-details--content">
+                        <div class="current-details--subtitle">Puesta sol</div>
+                        {{info.sunset}}
+                    </div>
+                    <div class="current-details--icon">
+                        <icon-sunset></icon-sunset>
+                    </div>
                 </div>
             </div>
             <div class="current-log">{{ info }}</div>
