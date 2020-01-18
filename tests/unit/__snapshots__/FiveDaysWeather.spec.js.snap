@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`FiveDaysWeather renders right 1`] = `
+exports[`FiveDaysWeather renders the component 1`] = `
 <section>
   <div>WEATHER With API Call to Open Weather Map</div>
   <div class="weather-container">
@@ -11,24 +11,6 @@ exports[`FiveDaysWeather renders right 1`] = `
         <span>Clouds</span>
         :
         <span>14.94ºC</span></div>
-      <div class="weather-item"><span>15:00:00</span>
-        :
-        <span>Clouds</span>
-        :
-        <span>16.26ºC</span></div>
-    </div>
-    <div class="weather-date">
-      <h1>2020-01-19</h1>
-      <div class="weather-item"><span>18:00:00</span>
-        :
-        <span>Clouds</span>
-        :
-        <span>11.2ºC</span></div>
-      <div class="weather-item"><span>21:00:00</span>
-        :
-        <span>Clouds</span>
-        :
-        <span>10.89ºC</span></div>
     </div>
   </div>
 </section>
