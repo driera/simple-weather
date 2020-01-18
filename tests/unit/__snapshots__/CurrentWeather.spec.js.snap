@@ -1,0 +1,100 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CurrentWeather renders the component 1`] = `
+<div class="current">
+  <div class="container">
+    <h1>kjadsn</h1>
+    <div class="current-main">
+      <div class="current-main--location">Barcelona</div>
+      <div class="current-main--time">13:06h — sábado, 18 ene. '20</div>
+      <div class="current-main--temp"><span class="current-main--temp-text">14</span> <span class="current-main--temp-symbol">º</span></div>
+      <div class="current-main--conditions">
+        <icon-rain-stub class="current-main--conditions-icon"></icon-rain-stub>
+        <div class="current-main--conditions-text">Lluvia suave</div>
+      </div>
+    </div>
+    <div class="current-details">
+      <div class="current-details--title"><span>Detalles</span></div>
+      <div class="current-details--item">
+        <div class="current-details--content">
+          <div class="current-details--subtitle">Viento</div> <span class="current-details--sub">O</span>
+          2.1
+          <span class="current-details--units">km/h</span>
+        </div>
+        <div class="current-details--icon">
+          <icon-wind-stub class="current-details--icon"></icon-wind-stub>
+        </div>
+      </div>
+      <div class="current-details--item">
+        <div class="current-details--content">
+          <div class="current-details--subtitle">Nubosidad</div>
+          40
+          <span class="current-details--units">%</span>
+        </div>
+        <div class="current-details--icon">
+          <icon-cloud-stub></icon-cloud-stub>
+        </div>
+      </div>
+      <div class="current-details--item">
+        <div class="current-details--content">
+          <div class="current-details--subtitle">Humedad</div>
+          62
+          <span class="current-details--units">%</span>
+        </div>
+        <div class="current-details--icon">
+          <icon-raindrop-stub></icon-raindrop-stub>
+        </div>
+      </div>
+      <div class="current-details--item">
+        <div class="current-details--content">
+          <div class="current-details--subtitle">Presión</div>
+          1029
+          <span class="current-details--units">mBar</span>
+        </div>
+        <div class="current-details--icon">
+          <icon-pressure-stub></icon-pressure-stub>
+        </div>
+      </div>
+    </div>
+    <div class="current-details">
+      <div class="current-details--title"><span>Salida/Puesta de sol</span></div>
+      <div class="current-details--item">
+        <div class="current-details--content">
+          <div class="current-details--subtitle">Salida sol</div>
+          08:19h
+        </div>
+        <div class="current-details--icon">
+          <icon-sunrise-stub></icon-sunrise-stub>
+        </div>
+      </div>
+      <div class="current-details--item">
+        <div class="current-details--content">
+          <div class="current-details--subtitle">Puesta sol</div>
+          18:04h
+        </div>
+        <div class="current-details--icon">
+          <icon-sunset-stub></icon-sunset-stub>
+        </div>
+      </div>
+    </div>
+    <div class="current-log">{
+      "pressure": 1029,
+      "temperature": 13.79,
+      "temperatureMin": 12,
+      "temperatureMax": 16.11,
+      "humidity": 62,
+      "state": "Rain",
+      "stateDescription": "Lluvia suave",
+      "stateIcon": "icon-rain",
+      "windSpeed": 2.1,
+      "windAngle": "O",
+      "clouds": 40,
+      "hour": "13:06h",
+      "date": "sábado, 18 ene. '20",
+      "sunrise": "08:19h",
+      "sunset": "18:04h",
+      "city": "Barcelona"
+      }</div>
+  </div>
+</div>
+`;

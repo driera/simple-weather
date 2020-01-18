@@ -19,6 +19,7 @@ export default function(data) {
         'hour': `${moment().format('HH:mm')}h`,
         'date': `${moment().format(`dddd, DD MMM 'YY`)}`,
         'sunrise': `${moment.unix(data.sys.sunrise).format('HH:mm')}h`,
-        'sunset': `${moment.unix(data.sys.sunset).format('HH:mm')}h`
+        'sunset': `${moment.unix(data.sys.sunset).format('HH:mm')}h`,
+        'city': data.name
     };
 }

@@ -1,6 +1,5 @@
 import {shallowMount} from '@vue/test-utils';
 import FiveDaysWeather from '@/components/FiveDaysWeather/FiveDaysWeather';
-import fiveDaysFixture from './fixtures/fiveDaysFixture';
 
 describe('FiveDaysWeather', () => {
     let props;

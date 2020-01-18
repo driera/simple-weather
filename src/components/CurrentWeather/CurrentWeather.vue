@@ -1,16 +1,17 @@
 <template>
-    <div v-if="info" class="current">
+    <div v-if="weatherData" class="current">
         <div class="container">
+            <h1>kjadsn</h1>
             <div class="current-main">
-                <div class="current-main--location">{{cityName}}</div>
-                <div class="current-main--time">{{info.hour}} — {{info.date}}</div>
+                <div class="current-main--location">{{weatherData.city}}</div>
+                <div class="current-main--time">{{weatherData.hour}} — {{weatherData.date}}</div>
                 <div class="current-main--temp">
-                    <span class="current-main--temp-text">{{Math.round(info.temperature)}}</span>
+                    <span class="current-main--temp-text">{{Math.round(weatherData.temperature)}}</span>
                     <span class="current-main--temp-symbol">º</span>
                 </div>
                 <div class="current-main--conditions">
-                    <component :is="info.stateIcon" class="current-main--conditions-icon"></component>
-                    <div class="current-main--conditions-text">{{info.stateDescription}}</div>
+                    <component :is="weatherData.stateIcon" class="current-main--conditions-icon"></component>
+                    <div class="current-main--conditions-text">{{weatherData.stateDescription}}</div>
                 </div>
             </div>
             <div class="current-details">
@@ -20,8 +21,8 @@
                 <div class="current-details--item">
                     <div class="current-details--content">
                         <div class="current-details--subtitle">Viento</div>
-                        <span class="current-details--sub">{{info.windAngle}}</span>
-                        {{info.windSpeed}}
+                        <span class="current-details--sub">{{weatherData.windAngle}}</span>
+                        {{weatherData.windSpeed}}
                         <span class="current-details--units">km/h</span>
                     </div>
                     <div class="current-details--icon">
@@ -31,7 +32,7 @@
                 <div class="current-details--item">
                     <div class="current-details--content">
                         <div class="current-details--subtitle">Nubosidad</div>
-                        {{info.clouds}}
+                        {{weatherData.clouds}}
                         <span class="current-details--units">%</span>
                     </div>
                     <div class="current-details--icon">
@@ -41,7 +42,7 @@
                 <div class="current-details--item">
                     <div class="current-details--content">
                         <div class="current-details--subtitle">Humedad</div>
-                        {{info.humidity}}
+                        {{weatherData.humidity}}
                         <span class="current-details--units">%</span>
                     </div>
                     <div class="current-details--icon">
@@ -51,7 +52,7 @@
                 <div class="current-details--item">
                     <div class="current-details--content">
                         <div class="current-details--subtitle">Presión</div>
-                        {{info.pressure}}
+                        {{weatherData.pressure}}
                         <span class="current-details--units">mBar</span>
                     </div>
                     <div class="current-details--icon">
@@ -66,7 +67,7 @@
                 <div class="current-details--item">
                     <div class="current-details--content">
                         <div class="current-details--subtitle">Salida sol</div>
-                        {{info.sunrise}}
+                        {{weatherData.sunrise}}
                     </div>
                     <div class="current-details--icon">
                         <icon-sunrise></icon-sunrise>
@@ -75,39 +76,25 @@
                 <div class="current-details--item">
                     <div class="current-details--content">
                         <div class="current-details--subtitle">Puesta sol</div>
-                        {{info.sunset}}
+                        {{weatherData.sunset}}
                     </div>
                     <div class="current-details--icon">
                         <icon-sunset></icon-sunset>
                     </div>
                 </div>
             </div>
-            <div class="current-log">{{ info }}</div>
+            <div class="current-log">{{ weatherData }}</div>
         </div>
     </div>
 </template>
 
 <script>
-import Repository from '@/repositories/RepositoryFactory';
-const CurrentWeatherRepository = Repository.get('currentWeather');
-
 export default {
     name: 'CurrentWeather',
-    data() {
-        return {
-            info: null,
-            cityName: 'Valencia',
-            cityID: '2509954'
-        };
-
-    },
-    methods: {
-        async getCurrentWeather() {
-            this.info = await CurrentWeatherRepository.get(this.cityID);
+    props: {
+        weatherData: {
+            type: Object
         }
-    },
-    created() {
-        this.getCurrentWeather();
     }
 
 };

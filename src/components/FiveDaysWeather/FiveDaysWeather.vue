@@ -23,13 +23,6 @@ export default {
         weatherData: {
             type: Object
         }
-    },
-    data() {
-        return {
-            info: {},
-            cityID: '2509954',
-            daysCount: 40
-        };
     }
 };
 </script>
