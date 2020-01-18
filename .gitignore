@@ -4,6 +4,7 @@ node_modules
 city.list.json
 src/assets/svg/optimized
 design
+/coverage
 
 # local env files
 .env.local
