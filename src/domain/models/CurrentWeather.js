@@ -2,6 +2,7 @@ import moment from 'moment';
 import getDirection from '@/services/getDirection';
 import getIcon from '@/services/getIcon';
 
+moment.locale('es');
 export default function(data) {
     return {
         'pressure': data.main.pressure,

@@ -1,11 +1,13 @@
 <template>
     <div id="app">
         <current-weather/>
+        <five-days-weather/>
     </div>
 </template>
 
 <script>
 import CurrentWeather from '@/components/CurrentWeather/CurrentWeather';
+import FiveDaysWeather from '@/components/FiveDaysWeather/FiveDaysWeather';
 
 export default {
     name: 'app',
@@ -15,7 +17,8 @@ export default {
         };
     },
     components: {
-        CurrentWeather
+        CurrentWeather,
+        FiveDaysWeather
     }
 };
 </script>

@@ -10,9 +10,14 @@
 * Group FiveDays collection by date
 * Add some layout
 * Add current weather view with basic styles
-* __Add weather icons [Climacons](http://adamwhitcroft.com/climacons/)__
+* Add weather icons [Climacons](http://adamwhitcroft.com/climacons/)
 
 ## TO DO
+* Test everything since now
+* Move sun vertically depending on time
+* Add 5 days forecast to page
+* Separate today & 5 days forecasts in different tabs
+* Add location search with google places api
 * Store data (maybe store it in a cookie / localstorage creating a timestamp to renew the info past 10 minutes).
 * Deploy everything to netlify
 

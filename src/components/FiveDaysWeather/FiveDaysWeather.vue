@@ -19,10 +19,9 @@
 <script>
 import Repository from '@/repositories/RepositoryFactory';
 const FiveDaysRepository = Repository.get('fiveDays');
-const CurrentWeatherRepository = Repository.get('currentWeather');
 
 export default {
-    name: 'Weather',
+    name: 'FiveDaysWeather',
     data() {
         return {
             info: {},
@@ -33,21 +32,14 @@ export default {
     methods: {
         async getFiveDays() {
             this.info = await FiveDaysRepository.get(this.cityID, this.daysCount);
-            console.log(this.info);
-
-        },
-        async getCurrentWeather() {
-            const data = await CurrentWeatherRepository.get(this.cityID);
-            console.log(data);
         }
     },
     created() {
         this.getFiveDays();
-        this.getCurrentWeather();
     }
 };
 </script>
 
 <style scoped>
-    @import 'Weather.css';
+    @import 'FiveDaysWeather';
 </style>

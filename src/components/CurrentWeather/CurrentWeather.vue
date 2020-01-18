@@ -114,5 +114,6 @@ export default {
 </script>
 
 <style scoped>
-    @import './CurrentWeather.css';
+    @import '../../assets/styles/helpers/variables';
+    @import './CurrentWeather';
 </style>
