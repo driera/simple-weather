@@ -10,6 +10,8 @@
                     <span>{{item.state}}</span>
                     :
                     <span>{{item.temperature}}ºC</span>
+                    :
+                    <span>{{item.windSpeed}}<sup>km/h</sup></span>
                 </div>
             </div>
         </div>
