@@ -1,34 +1,50 @@
 <template>
-    <section>
-        <div>WEATHER With API Call to Open Weather Map</div>
-        <div class="weather-container">
-            <div class="weather-date" v-for="(date, key) in weatherData" :key="key">
-                <h1>{{ key}}</h1>
-                <div class="weather-item" v-for="item in date" :key="item.id">
-                    <span>{{ item.time }}</span>
-                    :
-                    <span>{{item.state}}</span>
-                    :
-                    <span>{{item.temperature}}ºC</span>
-                    :
-                    <span>{{item.windSpeed}}<sup>km/h</sup></span>
-                </div>
-            </div>
-        </div>
-    </section>
+  <section v-if="weatherData" class="five-days">
+    <div class="container">
+      <h2 class="five-days--title">Tiempo en los próximos 5 días</h2>
+      <div class="day" v-for="(date, key) in weatherData" :key="key">
+        <TitleWithLine :content="key" dark="true" class="day--title" />
+        <FiveDaysItem v-for="item in date" :key="item.id" :data="item" />
+      </div>
+    </div>
+  </section>
 </template>
 
 <script>
+import FiveDaysItem from "@/components/FiveDaysItem";
+import TitleWithLine from "@/components/TitleWithLine";
+
 export default {
-    name: 'FiveDaysWeather',
-    props: {
-        weatherData: {
-            type: Object
-        }
-    }
+  name: "FiveDaysWeather",
+  components: { FiveDaysItem, TitleWithLine },
+  props: {
+    weatherData: {
+      type: Object,
+    },
+  },
 };
 </script>
 
 <style scoped>
-    @import 'FiveDaysWeather';
+@import "../../assets/styles/helpers/variables";
+
+.five-days {
+    padding: 30px 0;
+    background: hsl(0, 0%, 95%)
+}
+.five-days--title {
+  font-size: 20px;
+  margin-bottom: 40px;
+}
+.day {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: 1fr 1fr;
+    margin-bottom: 20px;
+}
+.day--title {
+  grid-column: span 2;
+}
+
+
 </style>

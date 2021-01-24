@@ -1,7 +1,7 @@
 <template>
-  <div v-if="weatherData" class="current">
+  <section v-if="weatherData" class="current">
     <div class="container">
-      <h1>Tiempo hoy</h1>
+      <h1 class="current--title">Tiempo hoy</h1>
       <div class="intro">
         <div class="location">{{ weatherData.city }}</div>
         <div class="time">
@@ -22,29 +22,27 @@
         </div>
       </div>
       <div class="details">
-        <div class="details--title">
-          <span>Detalles</span>
-        </div>
-        <DetailsItem
+        <TitleWithLine content="Detalles" class="details--title" />
+        <CurrentItem
           title="Viento"
           :content="weatherData.windSpeed"
           :sub="weatherData.windAngle"
           units="km/h"
           icon="icon-wind"
         />
-        <DetailsItem
+        <CurrentItem
           title="Nubosidad"
           :content="weatherData.clouds"
           units="%"
           icon="icon-cloud"
         />
-        <DetailsItem
+        <CurrentItem
           title="Humedad"
           :content="weatherData.humidity"
           units="%"
           icon="icon-raindrop"
         />
-        <DetailsItem
+        <CurrentItem
           title="Presión"
           :content="weatherData.pressure"
           units="mBar"
@@ -52,15 +50,13 @@
         />
       </div>
       <div class="details">
-        <div class="details--title">
-          <span>Salida/Puesta de sol</span>
-        </div>
-        <DetailsItem
+        <TitleWithLine content="Salida/Puesta de sol" class="details--title" />
+        <CurrentItem
           title="Salida sol"
           :content="weatherData.sunrise"
           icon="icon-sunrise"
         />
-        <DetailsItem
+        <CurrentItem
           title="Puesta sol"
           :content="weatherData.sunset"
           icon="icon-sunset"
@@ -68,14 +64,16 @@
       </div>
       <div class="log">{{ weatherData }}</div>
     </div>
-  </div>
+  </section>
 </template>
 
 <script>
-import DetailsItem from "@/components/DetailsItem";
+import CurrentItem from "@/components/CurrentItem";
+import TitleWithLine from "@/components/TitleWithLine";
+
 export default {
   name: "CurrentWeather",
-  components: { DetailsItem },
+  components: { CurrentItem, TitleWithLine },
   props: {
     weatherData: {
       type: Object,
@@ -84,7 +82,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="postcss" scoped>
 @import "../../assets/styles/helpers/variables";
 @import "./CurrentWeather";
 </style>

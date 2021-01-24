@@ -14,7 +14,7 @@
 
 <script>
 export default {
-  name: "DetailsItem",
+  name: "CurrentItem",
   props: {
     title: String,
     sub: String,
@@ -25,7 +25,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="postcss" scoped>
 @import "../assets/styles/helpers/variables";
 
 .item {

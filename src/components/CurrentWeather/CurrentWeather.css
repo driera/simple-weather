@@ -23,6 +23,11 @@
   }
 }
 
+.current--title {
+  font-size: 20px;
+  margin-bottom: 40px;
+}
+
 .intro {
   padding: 20px 0;
   margin-bottom: 20px;
@@ -81,22 +86,6 @@
 
 .details--title {
   grid-column: span 2;
-  display: flex;
-  align-items: center;
-  font-size: 12px;
-  text-transform: uppercase;
-
-  span {
-    flex: 0 0 auto;
-    margin-right: 10px;
-  }
-
-  &:after {
-    content: "";
-    flex: 1 1 auto;
-    height: 1px;
-    border-top: var(--thin-line);
-  }
 }
 
 .log {

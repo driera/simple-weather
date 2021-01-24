@@ -20,4 +20,5 @@
 
     /* Line */
     --thin-line: .1px solid color-mod(var(--light-color) a(35%));
+    --thin-line-dark: .1px solid color-mod(var(--dark-color) a(35%));
 }
