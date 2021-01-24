@@ -1,13 +1,13 @@
 module.exports = {
-    root: true,
-    env: {
+    'root': true,
+    'env': {
         node: true
     },
     'extends': [
         'plugin:vue/essential',
         'eslint:recommended'
     ],
-    rules: {
+    'rules': {
         'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
         'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
         'array-bracket-spacing': 1,
@@ -117,12 +117,12 @@ module.exports = {
         'template-curly-spacing': 1,
         'use-isnan': 1,
         'valid-typeof': 2,
-        'wrap-regex': 1,
+        'wrap-regex': 1
     },
-    parserOptions: {
+    'parserOptions': {
         parser: 'babel-eslint'
     },
-    overrides: [
+    'overrides': [
         {
             files: [
                 '**/__tests__/*.{j,t}s?(x)',
@@ -133,4 +133,4 @@ module.exports = {
             }
         }
     ]
-}
+};
