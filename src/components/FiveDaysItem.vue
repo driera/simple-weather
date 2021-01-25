@@ -14,7 +14,10 @@
 export default {
   name: "FiveDaysItem",
   props: {
-    data: Object,
+    data: {
+      type: Object,
+      default: () => {}
+    },
   },
 };
 </script>

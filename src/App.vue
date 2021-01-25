@@ -1,8 +1,8 @@
 <template>
-    <div id="app">
-        <current-weather :weather-data="current"/>
-        <five-days-weather :weather-data="fiveDays"/>
-    </div>
+  <div id="app">
+    <current-weather :weather-data="current" />
+    <five-days-weather :weather-data="fiveDays" />
+  </div>
 </template>
 
 <script>
@@ -13,7 +13,11 @@ const FiveDaysRepository = Repository.get('fiveDays');
 const CurrentWeatherRepository = Repository.get('currentWeather');
 
 export default {
-    name: 'app',
+    name: 'App',
+    components: {
+        CurrentWeather,
+        FiveDaysWeather
+    },
     data() {
         return {
             fiveDays: null,
@@ -22,18 +26,14 @@ export default {
             daysCount: 40
         };
     },
-    components: {
-        CurrentWeather,
-        FiveDaysWeather
+    created() {
+        this.loadData();
     },
     methods: {
         async loadData() {
             this.fiveDays = await FiveDaysRepository.get(this.cityID, this.daysCount);
             this.current = await CurrentWeatherRepository.get(this.cityID);
         }
-    },
-    created() {
-        this.loadData();
     }
 };
 </script>

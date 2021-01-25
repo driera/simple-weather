@@ -1,6 +1,9 @@
 <template>
-  <div class="title" :class="{'is-dark': dark}">
-    <span>{{content}}</span>
+  <div
+    class="title"
+    :class="{'is-dark': dark}"
+  >
+    <span>{{ content }}</span>
   </div>
 </template>
 
@@ -8,7 +11,10 @@
 export default {
   name: "TitleWithLine",
   props: {
-    content: String,
+    content: {
+      type: String,
+      default: "A title"
+    },
     dark: Boolean
   },
 

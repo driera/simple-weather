@@ -1,10 +1,27 @@
 <template>
-  <section v-if="weatherData" class="five-days">
+  <section
+    v-if="weatherData"
+    class="five-days"
+  >
     <div class="container">
-      <h2 class="five-days--title">Tiempo en los próximos 5 días</h2>
-      <div class="day" v-for="(date, key) in weatherData" :key="key">
-        <TitleWithLine :content="key" dark="true" class="day--title" />
-        <FiveDaysItem v-for="item in date" :key="item.id" :data="item" />
+      <h2 class="five-days--title">
+        Tiempo en los próximos 5 días
+      </h2>
+      <div
+        v-for="(date, key) in weatherData"
+        :key="key"
+        class="day"
+      >
+        <TitleWithLine
+          :content="key"
+          dark="true"
+          class="day--title"
+        />
+        <FiveDaysItem
+          v-for="item in date"
+          :key="item.id"
+          :data="item"
+        />
       </div>
     </div>
   </section>
@@ -20,6 +37,7 @@ export default {
   props: {
     weatherData: {
       type: Object,
+      default: () => {}
     },
   },
 };

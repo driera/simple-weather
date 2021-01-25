@@ -1,9 +1,16 @@
 <template>
-  <section v-if="weatherData" class="current">
+  <section
+    v-if="weatherData"
+    class="current"
+  >
     <div class="container">
-      <h1 class="current--title">Tiempo hoy</h1>
+      <h1 class="current--title">
+        Tiempo hoy
+      </h1>
       <div class="intro">
-        <div class="location">{{ weatherData.city }}</div>
+        <div class="location">
+          {{ weatherData.city }}
+        </div>
         <div class="time">
           {{ weatherData.hour }} — {{ weatherData.date }}
         </div>
@@ -22,7 +29,10 @@
         </div>
       </div>
       <div class="details">
-        <TitleWithLine content="Detalles" class="details--title" />
+        <TitleWithLine
+          content="Detalles"
+          class="details--title"
+        />
         <CurrentItem
           title="Viento"
           :content="weatherData.windSpeed"
@@ -50,7 +60,10 @@
         />
       </div>
       <div class="details">
-        <TitleWithLine content="Salida/Puesta de sol" class="details--title" />
+        <TitleWithLine
+          content="Salida/Puesta de sol"
+          class="details--title"
+        />
         <CurrentItem
           title="Salida sol"
           :content="weatherData.sunrise"
@@ -62,7 +75,9 @@
           icon="icon-sunset"
         />
       </div>
-      <div class="log">{{ weatherData }}</div>
+      <div class="log">
+        {{ weatherData }}
+      </div>
     </div>
   </section>
 </template>
@@ -77,6 +92,7 @@ export default {
   props: {
     weatherData: {
       type: Object,
+      default: () => {}
     },
   },
 };

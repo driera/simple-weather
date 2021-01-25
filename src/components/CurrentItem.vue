@@ -1,10 +1,18 @@
 <template>
   <div class="item">
     <div class="content">
-      <div class="title">{{ title }}</div>
-      <span class="sub" v-if="sub">{{ sub }}</span>
+      <div class="title">
+        {{ title }}
+      </div>
+      <span
+        v-if="sub"
+        class="sub"
+      >{{ sub }}</span>
       {{ content }}
-      <span class="units" v-if="units">{{ units }}</span>
+      <span
+        v-if="units"
+        class="units"
+      >{{ units }}</span>
     </div>
     <div class="icon">
       <component :is="icon" />
@@ -16,11 +24,26 @@
 export default {
   name: "CurrentItem",
   props: {
-    title: String,
-    sub: String,
-    content: String,
-    units: String,
-    icon: String,
+    title: {
+      type: String,
+      default: ""
+    },
+    sub: {
+      type: String,
+      default: ""
+    },
+    content: {
+      type: String,
+      default: ""
+    },
+    units: {
+      type: String,
+      default: ""
+    },
+    icon: {
+      type: String,
+      default: ""
+    },
   },
 };
 </script>
