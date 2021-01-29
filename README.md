@@ -14,8 +14,12 @@
 * Update test location
 
 ## TO DO
+* Remove moment.js in favour of plain JS
 * Add typescript
 * Test everything since now
+  (√) Components
+  ( ) Repositories
+  ( ) Domain models
 * Move sun vertically depending on time
 * Add 5 days forecast to page
 * Separate today & 5 days forecasts in different tabs

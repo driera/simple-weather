@@ -15,7 +15,7 @@ export default function(data) {
     id: element.dt,
   }));
 
-  return collection.reduce((prev, current) => {
+  const groupCollectionByDay = collection.reduce((prev, current) => {
     const timeDay = current.time.split(" ")[0];
     const timeHour = current.time.split(" ")[1];
 
@@ -23,4 +23,6 @@ export default function(data) {
     current.time = timeHour;
     return prev;
   }, {});
+
+  return groupCollectionByDay;
 }
