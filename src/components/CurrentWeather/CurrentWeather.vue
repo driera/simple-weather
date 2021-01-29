@@ -35,26 +35,26 @@
         />
         <CurrentItem
           title="Viento"
-          :content="weatherData.windSpeed"
+          :content="weatherData.windSpeed.toString()"
           :sub="weatherData.windAngle"
           units="km/h"
           icon="icon-wind"
         />
         <CurrentItem
           title="Nubosidad"
-          :content="weatherData.clouds"
+          :content="weatherData.clouds.toString()"
           units="%"
           icon="icon-cloud"
         />
         <CurrentItem
           title="Humedad"
-          :content="weatherData.humidity"
+          :content="weatherData.humidity.toString()"
           units="%"
           icon="icon-raindrop"
         />
         <CurrentItem
           title="Presión"
-          :content="weatherData.pressure"
+          :content="weatherData.pressure.toString()"
           units="mBar"
           icon="icon-pressure"
         />
@@ -66,12 +66,12 @@
         />
         <CurrentItem
           title="Salida sol"
-          :content="weatherData.sunrise"
+          :content="weatherData.sunrise.toString()"
           icon="icon-sunrise"
         />
         <CurrentItem
           title="Puesta sol"
-          :content="weatherData.sunset"
+          :content="weatherData.sunset.toString()"
           icon="icon-sunset"
         />
       </div>
