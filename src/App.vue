@@ -1,13 +1,11 @@
 <template>
   <div id="app">
-    <current-weather :weather-data="current" />
-    <five-days-weather :weather-data="fiveDays" />
+    <current :weather-data="current" />
   </div>
 </template>
 
 <script>
-import CurrentWeather from '@/components/CurrentWeather/CurrentWeather';
-import FiveDaysWeather from '@/components/FiveDaysWeather/FiveDaysWeather';
+import Current from '@/components/Current/Current';
 import Repository from '@/repositories/RepositoryFactory';
 const FiveDaysRepository = Repository.get('fiveDays');
 const CurrentWeatherRepository = Repository.get('currentWeather');
@@ -15,8 +13,7 @@ const CurrentWeatherRepository = Repository.get('currentWeather');
 export default {
     name: 'App',
     components: {
-        CurrentWeather,
-        FiveDaysWeather
+        Current,
     },
     data() {
         return {

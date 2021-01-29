@@ -83,11 +83,11 @@
 </template>
 
 <script>
-import CurrentItem from "@/components/CurrentItem";
+import CurrentItem from "@/components/Current/CurrentItem";
 import TitleWithLine from "@/components/TitleWithLine";
 
 export default {
-  name: "CurrentWeather",
+  name: "Current",
   components: { CurrentItem, TitleWithLine },
   props: {
     weatherData: {
@@ -100,5 +100,5 @@ export default {
 
 <style lang="postcss" scoped>
 @import "../../assets/styles/helpers/variables";
-@import "./CurrentWeather";
+@import "./Current";
 </style>

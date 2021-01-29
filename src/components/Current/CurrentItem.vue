@@ -49,7 +49,7 @@ export default {
 </script>
 
 <style lang="postcss" scoped>
-@import "../assets/styles/helpers/variables";
+@import "../../assets/styles/helpers/variables";
 
 .item {
   display: grid;
