@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FiveDays renders the component 1`] = `
+<section class="five-days">
+  <div class="container">
+    <h2 class="five-days--title">
+      Tiempo en los próximos 5 días
+    </h2>
+    <div class="day">
+      <div class="title day--title is-dark"><span>2021-01-18</span></div>
+      <div class="weather-item"><span>12:00:00</span>
+        <div class="icon">
+          <!---->
+        </div> <span>nubes</span>
+        :
+        <span>14.94ºC</span>
+        :
+        <span>6.73<sup>km/h</sup></span>
+      </div>
+    </div>
+  </div>
+</section>
+`;

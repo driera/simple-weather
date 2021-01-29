@@ -14,7 +14,7 @@
       >
         <TitleWithLine
           :content="key"
-          dark="true"
+          :dark="true"
           class="day--title"
         />
         <FiveDaysItem
@@ -28,11 +28,11 @@
 </template>
 
 <script>
-import FiveDaysItem from "@/components/FiveDaysItem";
+import FiveDaysItem from "@/components/FiveDays/FiveDaysItem";
 import TitleWithLine from "@/components/TitleWithLine";
 
 export default {
-  name: "FiveDaysWeather",
+  name: "FiveDays",
   components: { FiveDaysItem, TitleWithLine },
   props: {
     weatherData: {
