@@ -8,9 +8,8 @@
 <script>
 import Current from '@/components/Current/Current';
 import FiveDays from '@/components/FiveDays/FiveDays';
-import Repository from '@/repositories/RepositoryFactory';
-const FiveDaysRepository = Repository.get('fiveDays');
-const CurrentWeatherRepository = Repository.get('currentWeather');
+import FiveDaysRepository from './repositories/FiveDaysRepository';
+import CurrentWeatherRepository from './repositories/CurrentWeatherRepository';
 
 export default {
     name: 'App',
