@@ -9,16 +9,16 @@ const PATH = `/forecast?id={id}&units=metric&lang=es&cnt={count}&APPID=${api_key
  */
 
 export default {
-    get(id, count) {
+    get(id: string, count: string) {
         const URL = PATH
             .replace('{id}', id)
             .replace('{count}', count);
 
         return Client.get(URL)
-            .then(response => new Weather(response.data))
+            .then(response => Weather(response.data))
             .catch(error => {
                 console.log(`${error}. Loading fallback`);
-                return new Weather(fallbackWeather);
+                return Weather(fallbackWeather);
             });
     }
-};
+}
