@@ -2,28 +2,7 @@ import { mount } from "@vue/test-utils";
 import Current from "./Current";
 
 describe("Current", () => {
-  it("renders the component", () => {
-    let wrapper = renderComponent();
-    expect(wrapper).toMatchSnapshot();
-  });
-
-  it("renders right", () => {
-    let city = "Barcelona";
-    let time = "13:06h — sábado, 18 ene. '20";
-    let temperature = "14 º";
-    let description = "Lluvia suave";
-    let windAngle = "O";
-
-    let wrapper = renderComponent();
-
-    expect(wrapper.find(".location").text()).toBe(city);
-    expect(wrapper.find(".time").text()).toBe(time);
-    expect(wrapper.find(".temp").text()).toBe(temperature);
-    expect(wrapper.find(".conditions").text()).toBe(description);
-    expect(wrapper.find(".sub").text()).toBe(windAngle);
-  });
-
-  let props = {
+  const props = {
     weatherData: {
       pressure: 1029,
       temperature: 13.79,
@@ -58,4 +37,25 @@ describe("Current", () => {
       },
     });
   };
+
+  it("renders the component", () => {
+    const wrapper = renderComponent();
+    expect(wrapper).toMatchSnapshot();
+  });
+
+  it("renders right", () => {
+    const city = "Barcelona";
+    const time = "13:06h — sábado, 18 ene. '20";
+    const temperature = "14 º";
+    const description = "Lluvia suave";
+    const windAngle = "O";
+
+    const wrapper = renderComponent();
+
+    expect(wrapper.find(".location").text()).toBe(city);
+    expect(wrapper.find(".time").text()).toBe(time);
+    expect(wrapper.find(".temp").text()).toBe(temperature);
+    expect(wrapper.find(".conditions").text()).toBe(description);
+    expect(wrapper.find(".sub").text()).toBe(windAngle);
+  });
 });

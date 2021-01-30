@@ -37,7 +37,9 @@ export default {
   props: {
     weatherData: {
       type: Object,
-      default: () => {}
+      default: () => {
+        return {}
+      }
     },
   },
 };

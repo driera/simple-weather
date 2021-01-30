@@ -5,7 +5,13 @@ module.exports = {
     node: true,
   },
 
-  extends: ["plugin:vue/recommended", "eslint:recommended", "@vue/typescript"],
+  extends: [
+    "eslint:recommended",
+    "plugin:vue/recommended",
+    "@vue/typescript",
+    "@vue/typescript/recommended",
+    "@vue/eslint-config-typescript",
+  ],
 
   parserOptions: {
     parser: "@typescript-eslint/parser",

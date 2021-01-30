@@ -2,31 +2,6 @@ import { mount } from "@vue/test-utils";
 import FiveDays from "./FiveDays";
 
 describe("FiveDays", () => {
-  it("renders the component", () => {
-    const wrapper = renderComponent();
-    expect(wrapper).toMatchSnapshot();
-  });
-
-  it("renders correct info", () => {
-    const time = "12:00:00";
-    const state = "nubes";
-
-    const wrapper = renderComponent();
-
-    expect(
-      wrapper
-        .findAll(".weather-item span")
-        .at(0)
-        .text()
-    ).toBe(time);
-    expect(
-      wrapper
-        .findAll(".weather-item span")
-        .at(1)
-        .text()
-    ).toBe(state);
-  });
-
   const props = {
     weatherData: {
       "2021-01-18": [
@@ -51,4 +26,29 @@ describe("FiveDays", () => {
       propsData: newProps || props,
     });
   };
+  
+  it("renders the component", () => {
+    const wrapper = renderComponent();
+    expect(wrapper).toMatchSnapshot();
+  });
+
+  it("renders correct info", () => {
+    const time = "12:00:00";
+    const state = "nubes";
+
+    const wrapper = renderComponent();
+
+    expect(
+      wrapper
+        .findAll(".weather-item span")
+        .at(0)
+        .text()
+    ).toBe(time);
+    expect(
+      wrapper
+        .findAll(".weather-item span")
+        .at(1)
+        .text()
+    ).toBe(state);
+  });
 });

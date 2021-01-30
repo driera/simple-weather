@@ -1,21 +1,21 @@
 import getIcon from "@/services/getIcon";
 
 type OneDayData = {
-  id: number
-  pressure: number
-  state: string
-  stateDescription: string
-  stateIcon: string
-  temperature: number
-  temperatureMax: number
-  temperatureMin: number
-  time: string
-  windAngle: number
-  windSpeed: number
+  id: number;
+  pressure: number;
+  state: string;
+  stateDescription: string;
+  stateIcon: string;
+  temperature: number;
+  temperatureMax: number;
+  temperatureMin: number;
+  time: string;
+  windAngle: number;
+  windSpeed: number;
 }
 
 export type FiveDaysData = {
-  [key: string]: OneDayData[]
+  [key: string]: OneDayData[];
 }
 
 const FiveDays = (data: any): () => FiveDaysData => {

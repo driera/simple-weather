@@ -3,26 +3,27 @@ import getDirection from '@/services/getDirection';
 import getIcon from '@/services/getIcon';
 
 export type CurrentWeatherData = {
-    city: string
-    clouds: number
-    date: string
-    hour: string
-    humidity: number
-    pressure: number
-    state: string
-    stateDescription: string
-    stateIcon: string
-    sunrise: string
-    sunset: string
-    temperature: number
-    temperatureMax: number
-    temperatureMin: number
-    windAngle: string
-    windSpeed: number
+    city: string;
+    clouds: number;
+    date: string;
+    hour: string;
+    humidity: number;
+    pressure: number;
+    state: string;
+    stateDescription: string;
+    stateIcon: string;
+    sunrise: string;
+    sunset: string;
+    temperature: number;
+    temperatureMax: number;
+    temperatureMin: number;
+    windAngle: string;
+    windSpeed: number;
 }
 
 moment.locale('es');
-const CurrentWeather = (data: any) => {
+
+const CurrentWeather = (data: any): CurrentWeatherData => {
     return {
         pressure: data.main.pressure,
         temperature: data.main.temp,
