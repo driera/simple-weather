@@ -1,4 +1,4 @@
-export default code => {
+const getIcon = (code: string) => {
     let iconName = '';
     [
         {'code': '01d', 'icon': 'sun'},
@@ -27,3 +27,5 @@ export default code => {
 
     return iconName;
 };
+
+export default getIcon;

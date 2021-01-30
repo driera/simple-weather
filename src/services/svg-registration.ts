@@ -7,7 +7,9 @@ const requireComponent = require.context(
 );
 
 requireComponent.keys().forEach(fileName => {
+    if(!fileName) return;
     const componentConfig = requireComponent(fileName);
+    // @ts-ignore
     const componentName = fileName
         .split('/')
         .pop()

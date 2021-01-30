@@ -1,4 +1,4 @@
-export default dir => {
+const getDirection = (dir: number) => {
     const arr = ['N', 'NE', 'E', 'SE', 'S', 'SO', 'O', 'NO'];
     let pointer = arr[0];
 
@@ -11,3 +11,5 @@ export default dir => {
 
     return pointer;
 };
+
+export default getDirection;
