@@ -1,5 +1,5 @@
 import { mount } from "@vue/test-utils";
-import Current from "./Current";
+import Current from "./Current.vue";
 
 describe("Current", () => {
   const props = {

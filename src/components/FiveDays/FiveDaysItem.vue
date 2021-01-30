@@ -12,18 +12,14 @@
   </div>
 </template>
 
-<script>
-export default {
-  name: "FiveDaysItem",
-  props: {
-    data: {
-      type: Object,
-      default: () => {
-        return {}
-      }
-    },
-  },
-};
+<script lang="ts">
+import { Component, Prop, Vue } from 'vue-property-decorator';
+import { OneDayType } from '@/domain/models/FiveDays';
+
+@Component
+export default class FiveDaysItem extends Vue {
+  @Prop() data!: OneDayType
+}
 </script>
 
 <style lang="postcss" scoped>

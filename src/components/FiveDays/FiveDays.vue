@@ -27,22 +27,19 @@
   </section>
 </template>
 
-<script>
-import FiveDaysItem from "@/components/FiveDays/FiveDaysItem";
-import TitleWithLine from "@/components/TitleWithLine";
+<script lang="ts">
+import { Component, Prop, Vue } from 'vue-property-decorator';
+import FiveDaysItem from "@/components/FiveDays/FiveDaysItem.vue";
+import TitleWithLine from "@/components/TitleWithLine.vue";
+import { FiveDaysType } from '@/domain/models/FiveDays';
 
-export default {
-  name: "FiveDays",
+@Component({
   components: { FiveDaysItem, TitleWithLine },
-  props: {
-    weatherData: {
-      type: Object,
-      default: () => {
-        return {}
-      }
-    },
-  },
-};
+})
+export default class FiveDays extends Vue {
+  @Prop({default: {}}) weatherData!: FiveDaysType
+}
+
 </script>
 
 <style scoped>

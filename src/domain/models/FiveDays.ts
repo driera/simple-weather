@@ -1,6 +1,7 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import getIcon from "@/services/getIcon";
 
-type OneDayData = {
+export type OneDayType = {
   id: number;
   pressure: number;
   state: string;
@@ -14,11 +15,11 @@ type OneDayData = {
   windSpeed: number;
 }
 
-export type FiveDaysData = {
-  [key: string]: OneDayData[];
+export type FiveDaysType = {
+  [key: string]: OneDayType[];
 }
 
-const FiveDays = (data: any): () => FiveDaysData => {
+const FiveDays = (data: any): FiveDaysType => {
   const collection = data.list.map((element: any) => ({
     pressure: element.main.pressure,
     temperature: element.main.temp,

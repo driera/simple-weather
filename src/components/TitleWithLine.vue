@@ -7,17 +7,13 @@
   </div>
 </template>
 
-<script>
-export default {
-  name: "TitleWithLine",
-  props: {
-    content: {
-      type: String,
-      default: "A title"
-    },
-    dark: Boolean
-  },
+<script lang="ts">
+import { Component, Prop, Vue } from 'vue-property-decorator';
 
+@Component
+export default class TitleWithLine extends Vue{
+  @Prop({default: "A title"}) content!: string
+  @Prop() dark!: boolean
 }
 </script>
 

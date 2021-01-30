@@ -1,5 +1,5 @@
 import { mount } from "@vue/test-utils";
-import FiveDays from "./FiveDays";
+import FiveDays from "./FiveDays.vue";
 
 describe("FiveDays", () => {
   const props = {

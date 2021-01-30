@@ -82,20 +82,19 @@
   </section>
 </template>
 
-<script>
-import CurrentItem from "@/components/Current/CurrentItem";
-import TitleWithLine from "@/components/TitleWithLine";
+<script lang="ts">
+import { Component, Prop, Vue } from 'vue-property-decorator';
+import CurrentItem from "./CurrentItem.vue";
+import TitleWithLine from "../TitleWithLine.vue";
+import { CurrentWeatherType } from '@/domain/models/CurrentWeather';
 
-export default {
-  name: "Current",
-  components: { CurrentItem, TitleWithLine },
-  props: {
-    weatherData: {
-      type: Object,
-      default: () => {}
-    },
-  },
-};
+@Component({
+  components: { CurrentItem, TitleWithLine }
+})
+export default class Current extends Vue {
+  @Prop() weatherData!: CurrentWeatherType
+}
+
 </script>
 
 <style lang="postcss" scoped>

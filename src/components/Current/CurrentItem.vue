@@ -20,32 +20,17 @@
   </div>
 </template>
 
-<script>
-export default {
-  name: "CurrentItem",
-  props: {
-    title: {
-      type: String,
-      default: ""
-    },
-    sub: {
-      type: String,
-      default: ""
-    },
-    content: {
-      type: String,
-      default: ""
-    },
-    units: {
-      type: String,
-      default: ""
-    },
-    icon: {
-      type: String,
-      default: ""
-    },
-  },
-};
+<script lang="ts">
+import { Component, Prop, Vue } from 'vue-property-decorator';
+
+@Component
+export default class CurrentItem extends Vue {
+  @Prop({default: ''}) title!: string
+  @Prop({default: ''}) sub!: string
+  @Prop({default: ''}) content!: string
+  @Prop({default: ''}) units!: string
+  @Prop({default: ''}) icon!: string
+}
 </script>
 
 <style lang="postcss" scoped>

@@ -1,8 +1,9 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import moment from 'moment';
 import getDirection from '@/services/getDirection';
 import getIcon from '@/services/getIcon';
 
-export type CurrentWeatherData = {
+export type CurrentWeatherType = {
     city: string;
     clouds: number;
     date: string;
@@ -23,7 +24,7 @@ export type CurrentWeatherData = {
 
 moment.locale('es');
 
-const CurrentWeather = (data: any): CurrentWeatherData => {
+const CurrentWeather = (data: any): CurrentWeatherType => {
     return {
         pressure: data.main.pressure,
         temperature: data.main.temp,
