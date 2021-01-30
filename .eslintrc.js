@@ -1,12 +1,16 @@
 module.exports = {
   root: true,
+
   env: {
     node: true,
   },
-  extends: ["plugin:vue/recommended", "eslint:recommended"],
+
+  extends: ["plugin:vue/recommended", "eslint:recommended", "@vue/typescript"],
+
   parserOptions: {
-    parser: "babel-eslint",
+    parser: "@typescript-eslint/parser",
   },
+
   overrides: [
     {
       files: [
