@@ -46,7 +46,7 @@ describe("FiveDays", () => {
     },
   };
 
-  const renderComponent = (newProps) => {
+  const renderComponent = (newProps?: {}) => {
     return mount(FiveDays, {
       propsData: newProps || props,
     });

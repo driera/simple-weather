@@ -3,7 +3,7 @@ import Current from "./Current";
 
 describe("Current", () => {
   it("renders the component", () => {
-    let wrapper = build();
+    let wrapper = renderComponent();
     expect(wrapper).toMatchSnapshot();
   });
 
@@ -14,7 +14,7 @@ describe("Current", () => {
     let description = "Lluvia suave";
     let windAngle = "O";
 
-    let wrapper = build();
+    let wrapper = renderComponent();
 
     expect(wrapper.find(".location").text()).toBe(city);
     expect(wrapper.find(".time").text()).toBe(time);
@@ -44,7 +44,7 @@ describe("Current", () => {
     },
   };
 
-  const build = (newProps) => {
+  const renderComponent = (newProps?: {}) => {
     return mount(Current, {
       propsData: newProps || props,
       stubs: {
