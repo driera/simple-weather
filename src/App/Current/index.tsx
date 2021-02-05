@@ -9,7 +9,11 @@ const Current: FunctionComponent = () => {
       <div style={sunStyles}></div>
       <div style={containerStyles}>
         <h1 style={titleStyles}>Tiempo hoy</h1>
-        <CurrentIntro />
+        <CurrentIntro
+          location="Valencia"
+          time={new Date()}
+          details={{ temperature: 16.3, conditions: "Nubes bajas" }}
+        />
         <div style={detailStyles}>
           <TitleWithLine style={detailsTitleStyles}>Detalles</TitleWithLine>
           <CurrentItem

@@ -1,16 +1,40 @@
 import React, { CSSProperties } from "react";
 
-const CurrentIntro = (): JSX.Element => {
+export type CurrentIntroType = {
+  location: string;
+  time: Date;
+  details: {
+    temperature: number;
+    conditions: string;
+  };
+};
+
+const CurrentIntro = ({
+  location,
+  time,
+  details
+}: CurrentIntroType): JSX.Element => {
+  const { temperature, conditions } = details;
+
+  const formattedTime = () => {
+    const hours = time.getHours();
+    const minutes =
+      time.getMinutes() < 10 ? `0${time.getMinutes()}` : time.getMinutes();
+    const date = time.toLocaleDateString();
+
+    return `${hours}:${minutes} – ${date}`;
+  };
+
   return (
     <div style={introStyles}>
-      <div style={locationStyles}>Valencia</div>
-      <div style={timeStyles}>21:00 - 30/01/2021</div>
+      <div style={locationStyles}>{location}</div>
+      <div style={timeStyles}>{formattedTime()}</div>
       <div style={tempStyles}>
-        <span style={tempContentStyles}>17</span>
+        <span style={tempContentStyles}>{temperature}</span>
         <span style={tempSymbolStyles}>º</span>
       </div>
       <div style={conditionStyles}>
-        <span>Nubes bajas</span>
+        <span>{conditions}</span>
       </div>
     </div>
   );
