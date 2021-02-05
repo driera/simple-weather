@@ -1,15 +1,16 @@
 import React, { CSSProperties } from "react";
+import { getDirection } from "../../utils";
 
-type CurrentItemType = {
-  title: string;
-  sub?: string;
+export type CurrentItemType = {
+  value: string;
+  sub?: number;
   content: string;
   units?: string;
   icon: string;
 };
 
 const CurrentItem = ({
-  title,
+  value,
   sub,
   content,
   units,
@@ -18,8 +19,12 @@ const CurrentItem = ({
   return (
     <div style={itemStyles}>
       <div style={contentStyles}>
-        <div style={titleStyles}>{title}</div>
-        {sub && <span style={subStyles}>{sub}</span>}
+        <div style={titleStyles}>{value}</div>
+        {!!sub && (
+          <span style={subStyles} data-testid="direction">
+            {getDirection(sub)}
+          </span>
+        )}
         {content}
         {units && <span style={unitsStyles}> {units}</span>}
       </div>
@@ -49,7 +54,7 @@ const titleStyles: CSSProperties = {
   fontWeight: 300
 };
 const unitsStyles: CSSProperties = { fontSize: 12 };
-const subStyles: CSSProperties = { fontSize: 13 };
+const subStyles: CSSProperties = { fontSize: 13, marginRight: 5 };
 const iconStyles: CSSProperties = { fontSize: 40 };
 
 export { CurrentItem };

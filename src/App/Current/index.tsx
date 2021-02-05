@@ -17,26 +17,26 @@ const Current: FunctionComponent = () => {
         <div style={detailStyles}>
           <TitleWithLine style={detailsTitleStyles}>Detalles</TitleWithLine>
           <CurrentItem
-            title="Viento"
+            value="Viento"
             content="25"
-            sub="O"
+            sub={270}
             units="km/h"
             icon="icon-wind"
           />
           <CurrentItem
-            title="Nubosidad"
+            value="Nubosidad"
             content="23"
             units="%"
             icon="icon-cloud"
           />
           <CurrentItem
-            title="Humedad"
+            value="Humedad"
             content="39"
             units="%"
             icon="icon-raindrop"
           />
           <CurrentItem
-            title="Presión"
+            value="Presión"
             content="1020"
             units="mBar"
             icon="icon-pressure"
@@ -46,8 +46,8 @@ const Current: FunctionComponent = () => {
           <TitleWithLine style={detailsTitleStyles}>
             Salida/Puesta de sol
           </TitleWithLine>
-          <CurrentItem title="Salida sol" content="07:45" icon="icon-sunrise" />
-          <CurrentItem title="Puesta sol" content="18:34" icon="icon-sunset" />
+          <CurrentItem value="Salida sol" content="07:45" icon="icon-sunrise" />
+          <CurrentItem value="Puesta sol" content="18:34" icon="icon-sunset" />
         </div>
       </div>
     </section>
