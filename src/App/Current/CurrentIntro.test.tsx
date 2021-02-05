@@ -5,22 +5,16 @@ import { CurrentIntro, CurrentIntroType } from "./CurrentIntro";
 describe("CurrentIntro", () => {
   it("shows correct location", () => {
     const location = "Barcelona";
-    render(
-      currentIntro({
-        location
-      })
-    );
+
+    render(currentIntroComponent({ location }));
 
     expect(screen.getByText(/barcelona/i)).toBeInTheDocument();
   });
 
   it("shows correct time", () => {
     const time = new Date(2021, 1, 5, 20, 45);
-    render(
-      currentIntro({
-        time
-      })
-    );
+
+    render(currentIntroComponent({ time }));
 
     expect(screen.getByText(/20:45 – 05\/02\/2021/i)).toBeInTheDocument();
   });
@@ -30,17 +24,14 @@ describe("CurrentIntro", () => {
       temperature: 10,
       conditions: "Very cold"
     };
-    render(
-      currentIntro({
-        details
-      })
-    );
+
+    render(currentIntroComponent({ details }));
 
     expect(screen.getByText(/10/i)).toBeInTheDocument();
     expect(screen.getByText(/very cold/i)).toBeInTheDocument();
   });
 
-  const currentIntro = ({
+  const currentIntroComponent = ({
     location = "Valencia",
     time = new Date(2021, 0, 1, 6, 0),
     details = {
