@@ -7,6 +7,10 @@
     "plugin:testing-library/recommended",
     "plugin:testing-library/react"
   ],
+  "plugins": [
+    "jest",
+    "testing-library"
+  ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "ecmaVersion": 2018,
