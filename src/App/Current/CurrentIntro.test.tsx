@@ -16,7 +16,7 @@ describe("CurrentIntro", () => {
 
     render(currentIntroComponent({ time }));
 
-    expect(screen.getByText(/20:45 – 05\/02\/2021/i)).toBeInTheDocument();
+    expect(screen.getByText(/20:45 – 2\/5\/2021/i)).toBeInTheDocument();
   });
 
   it("shows correct time", () => {
