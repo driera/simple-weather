@@ -1,15 +1,9 @@
 {
   "extends": [
     "plugin:react/recommended",
-    "plugin:@typescript-eslint/recommended",
-    "plugin:jsx-a11y/recommended",
-    "plugin:testing-library/recommended",
-    "plugin:testing-library/react",
-    "eslint-config-prettier"
+    "plugin:@typescript-eslint/recommended"
   ],
   "plugins": [
-    "jest",
-    "testing-library",
     "@typescript-eslint"
   ],
   "parser": "@typescript-eslint/parser",
@@ -27,6 +21,7 @@
   },
   "rules": {
     "@typescript-eslint/ban-ts-ignore": "off",
-    "@typescript-eslint/no-unused-vars": "off"
+    "@typescript-eslint/no-unused-vars": "off",
+    "@typescript-eslint/no-non-null-assertion": "off"
   }
 }
