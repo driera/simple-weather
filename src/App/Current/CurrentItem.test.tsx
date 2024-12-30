@@ -1,11 +1,11 @@
-import React, { FunctionComponent, ReactNode } from "react";
 import { render, screen } from "@testing-library/react";
+import React, { ReactNode } from "react";
 import { CurrentItem, CurrentItemType } from "./CurrentItem";
 
 describe("CurrentItem", () => {
   it("shows correct title and content", () => {
-    const value = "Nubes";
     const content = "75";
+    const value = "Nubes";
 
     render(currentItemComponent({ value, content }));
 
@@ -26,9 +26,7 @@ describe("CurrentItem", () => {
     sub = 100,
     content = "20",
     icon = "wind"
-  }: Partial<CurrentItemType>): ReactNode => {
-    return (
-      <CurrentItem value={value} sub={sub} content={content} icon={icon} />
-    );
-  };
+  }: Partial<CurrentItemType>): ReactNode => (
+    <CurrentItem content={content} icon={icon} sub={sub} value={value} />
+  );
 });

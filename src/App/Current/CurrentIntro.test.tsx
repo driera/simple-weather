@@ -1,5 +1,5 @@
-import React, { ReactNode } from "react";
 import { render, screen } from "@testing-library/react";
+import React, { ReactNode } from "react";
 import { CurrentIntro, CurrentIntroType } from "./CurrentIntro";
 
 describe("CurrentIntro", () => {

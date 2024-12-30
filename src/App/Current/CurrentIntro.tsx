@@ -1,13 +1,13 @@
 import React, { CSSProperties, FunctionComponent } from "react";
 
-export type CurrentIntroType = {
+export interface CurrentIntroType {
   location: string;
   time: Date;
   details: {
     temperature: number;
     conditions: string;
   };
-};
+}
 
 const CurrentIntro: FunctionComponent<CurrentIntroType> = ({
   location,

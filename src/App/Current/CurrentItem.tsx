@@ -1,13 +1,13 @@
 import React, { CSSProperties, FunctionComponent } from "react";
 import { getDirection } from "../../utils";
 
-export type CurrentItemType = {
+export interface CurrentItemType {
   value: string;
   sub?: number;
   content: string;
   units?: string;
   icon: string;
-};
+}
 
 const CurrentItem: FunctionComponent<CurrentItemType> = ({
   value,
