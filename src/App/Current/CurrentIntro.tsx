@@ -1,4 +1,4 @@
-import React, { CSSProperties } from "react";
+import React, { CSSProperties, FunctionComponent } from "react";
 
 export type CurrentIntroType = {
   location: string;
@@ -9,11 +9,11 @@ export type CurrentIntroType = {
   };
 };
 
-const CurrentIntro = ({
+const CurrentIntro: FunctionComponent<CurrentIntroType> = ({
   location,
   time,
   details
-}: CurrentIntroType): JSX.Element => {
+}: CurrentIntroType) => {
   const { temperature, conditions } = details;
 
   const formattedTime = () => {

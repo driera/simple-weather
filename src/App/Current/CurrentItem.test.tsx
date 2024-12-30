@@ -1,4 +1,4 @@
-import React from "react";
+import React, { FunctionComponent, ReactNode } from "react";
 import { render, screen } from "@testing-library/react";
 import { CurrentItem, CurrentItemType } from "./CurrentItem";
 
@@ -26,7 +26,7 @@ describe("CurrentItem", () => {
     sub = 100,
     content = "20",
     icon = "wind"
-  }: Partial<CurrentItemType>): JSX.Element => {
+  }: Partial<CurrentItemType>): ReactNode => {
     return (
       <CurrentItem value={value} sub={sub} content={content} icon={icon} />
     );

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { ReactNode } from "react";
 import { render, screen } from "@testing-library/react";
 import { CurrentIntro, CurrentIntroType } from "./CurrentIntro";
 
@@ -38,7 +38,7 @@ describe("CurrentIntro", () => {
       temperature: 20,
       conditions: "nice weather"
     }
-  }: Partial<CurrentIntroType>): JSX.Element => {
+  }: Partial<CurrentIntroType>): ReactNode => {
     return <CurrentIntro location={location} time={time} details={details} />;
   };
 });

@@ -1,14 +1,14 @@
-import React, { CSSProperties } from "react";
+import React, { CSSProperties, FunctionComponent } from "react";
 
 type TitleWithLineTypes = {
   children: React.ReactNode;
   style?: CSSProperties;
 };
 
-const TitleWithLine = ({
+const TitleWithLine: FunctionComponent<TitleWithLineTypes> = ({
   children,
   style
-}: TitleWithLineTypes): JSX.Element => {
+}) => {
   return (
     <div style={{ ...titleStyles, ...style }}>
       <span>{children}</span>

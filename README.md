@@ -45,7 +45,7 @@ Launches the test runner using jest and testing library
 #### `npm lint` or `npm lint:fix`
 Lints the code using eslint
 
-#### `npm check-types`
+#### `npm check-types` or `npm check-types:watch`
 Checks for Typescript type errors
 
 #### `npm build`

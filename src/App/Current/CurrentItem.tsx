@@ -1,4 +1,4 @@
-import React, { CSSProperties } from "react";
+import React, { CSSProperties, FunctionComponent } from "react";
 import { getDirection } from "../../utils";
 
 export type CurrentItemType = {
@@ -9,13 +9,13 @@ export type CurrentItemType = {
   icon: string;
 };
 
-const CurrentItem = ({
+const CurrentItem: FunctionComponent<CurrentItemType> = ({
   value,
   sub,
   content,
   units,
   icon
-}: CurrentItemType): JSX.Element => {
+}) => {
   return (
     <div style={itemStyles}>
       <div style={contentStyles}>
