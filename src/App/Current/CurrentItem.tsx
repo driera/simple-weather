@@ -1,5 +1,5 @@
 import React, { FunctionComponent } from "react";
-import { getDirection } from "../../utils";
+import { getDirection } from "../utils";
 import styles from "./CurrentItem.module.css";
 
 export interface CurrentItemType {
