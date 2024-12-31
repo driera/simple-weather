@@ -1,8 +1,8 @@
 import React, { FunctionComponent } from "react";
-import { Current } from "./Current";
+import { CurrentView } from "./Current/CurrentView";
 
 const App: FunctionComponent = () => {
-  return <Current />;
+  return <CurrentView />;
 };
 
 export default App;

@@ -1,5 +1,7 @@
 .current {
   position: relative;
+  width: 100dvw;
+  height: 100dvh;
   padding: 15px 0;
   background: linear-gradient(180deg, #10205b, #463d86, #9c5ca3);
 }

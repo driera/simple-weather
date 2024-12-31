@@ -4,7 +4,7 @@ import { CurrentIntro } from "./CurrentIntro";
 import { CurrentItem } from "./CurrentItem";
 import { TitleWithLine } from "./TitleWithLine";
 
-const Current: FunctionComponent = () => {
+export const CurrentView: FunctionComponent = () => {
   return (
     <section className={styles.current}>
       <div className={styles.sun}></div>
@@ -56,5 +56,3 @@ const Current: FunctionComponent = () => {
     </section>
   );
 };
-
-export { Current };
