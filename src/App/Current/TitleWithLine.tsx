@@ -1,34 +1,15 @@
-import React, { CSSProperties, FunctionComponent } from "react";
+import React, { FunctionComponent } from "react";
+import styles from "./TitleWithLine.module.css";
 
-export interface TitleWithLineTypes {
+const TitleWithLine: FunctionComponent<{
   children: React.ReactNode;
-  style?: CSSProperties;
-}
-
-const TitleWithLine: FunctionComponent<TitleWithLineTypes> = ({
-  children,
-  style
-}) => {
+}> = ({ children }) => {
   return (
-    <div style={{ ...titleStyles, ...style }}>
+    <div className={`${styles.title}`}>
       <span>{children}</span>
-      <span style={lineStyles}></span>
+      <span className={styles.line}></span>
     </div>
   );
-};
-
-const titleStyles: CSSProperties = {
-  display: "grid",
-  gridTemplateColumns: "auto 1fr",
-  gridGap: "10px",
-  alignItems: "center",
-  fontSize: "12px",
-  textTransform: "uppercase"
-};
-
-const lineStyles: CSSProperties = {
-  height: 1,
-  borderTop: "var(--thin-line)"
 };
 
 export { TitleWithLine };

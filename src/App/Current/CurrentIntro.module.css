@@ -1,0 +1,39 @@
+.intro {
+  padding: 20px 0;
+  margin-bottom: 20px;
+}
+
+.location {
+  font-size: 32px;
+  font-weight: 800;
+}
+
+.time {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.temp {
+  padding-top: 40px;
+  font-size: 100px;
+  line-height: 1;
+}
+
+.temp-content {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.temp-symbol {
+  display: inline-block;
+  margin-left: 5px;
+  vertical-align: top;
+}
+
+.condition {
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  font-weight: 600;
+  text-transform: capitalize;
+}

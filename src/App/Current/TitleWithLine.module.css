@@ -1,0 +1,13 @@
+.title {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-gap: 10px;
+  align-items: center;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.line {
+  height: 1px;
+  border-top: var(--thin-line);
+}

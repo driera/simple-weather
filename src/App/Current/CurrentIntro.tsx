@@ -1,4 +1,5 @@
-import React, { CSSProperties, FunctionComponent } from "react";
+import styles from "./CurrentIntro.module.css";
+import React, { FunctionComponent } from "react";
 
 export interface CurrentIntroType {
   location: string;
@@ -26,58 +27,18 @@ const CurrentIntro: FunctionComponent<CurrentIntroType> = ({
   };
 
   return (
-    <div style={introStyles}>
-      <div style={locationStyles}>{location}</div>
-      <div style={timeStyles}>{formattedTime()}</div>
-      <div style={tempStyles}>
-        <span style={tempContentStyles}>{temperature}</span>
-        <span style={tempSymbolStyles}>º</span>
+    <div className={styles.intro}>
+      <div className={styles.location}>{location}</div>
+      <div className={styles.time}>{formattedTime()}</div>
+      <div className={styles.temp}>
+        <span className={styles.tempContent}>{temperature}</span>
+        <span className={styles.tempSymbol}>º</span>
       </div>
-      <div style={conditionStyles}>
+      <div className={styles.condition}>
         <span>{conditions}</span>
       </div>
     </div>
   );
-};
-
-const introStyles: CSSProperties = {
-  padding: "20px 0",
-  marginBottom: 20
-};
-
-const locationStyles: CSSProperties = {
-  fontSize: 32,
-  fontWeight: 800
-};
-
-const timeStyles: CSSProperties = {
-  fontSize: 14,
-  fontWeight: 600
-};
-
-const tempStyles: CSSProperties = {
-  paddingTop: 40,
-  fontSize: "100px",
-  lineHeight: 1
-};
-
-const tempContentStyles: CSSProperties = {
-  display: "inline-block",
-  verticalAlign: "middle"
-};
-
-const tempSymbolStyles: CSSProperties = {
-  display: "inline-block",
-  marginLeft: 5,
-  verticalAlign: "top"
-};
-
-const conditionStyles: CSSProperties = {
-  display: "flex",
-  alignItems: "center",
-  fontSize: 18,
-  fontWeight: 600,
-  textTransform: "capitalize"
 };
 
 export { CurrentIntro };
