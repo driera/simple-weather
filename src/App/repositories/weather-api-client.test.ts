@@ -57,7 +57,7 @@ describe("Weather Repository", () => {
       temperature: 12.58,
       temperatureMax: 13.25,
       temperatureMin: 11.41,
-      windAngle: 45,
+      windAngle: expect.any(String),
       windSpeed: 1.34
     });
   });

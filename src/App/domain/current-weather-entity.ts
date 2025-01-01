@@ -1,3 +1,5 @@
+import { formatUnixToTime, getWindDirection } from "../utils";
+
 export interface CurrentWeather {
   city: string;
   clouds: number;
@@ -13,7 +15,7 @@ export interface CurrentWeather {
   temperature: number;
   temperatureMax: number;
   temperatureMin: number;
-  windAngle: number;
+  windAngle: string;
   windSpeed: number;
 }
 
@@ -74,7 +76,7 @@ export class CurrentWeatherEntity {
     const weatherConditions = this.data.weather[0];
     const windConditions = this.data.wind;
     const cloudConditions = this.data.clouds;
-    const sunConditions = this.getSunData();
+    const sunData = this.getSunData();
     return {
       pressure: mainConditions.pressure,
       temperature: mainConditions.temp,
@@ -86,26 +88,16 @@ export class CurrentWeatherEntity {
       stateDescription: weatherConditions.description,
       stateIcon: weatherConditions.icon,
       windSpeed: windConditions.speed,
-      windAngle: windConditions.deg,
+      windAngle: getWindDirection(windConditions.deg),
       clouds: cloudConditions.all,
-      ...sunConditions
+      ...sunData
     };
   }
 
   getSunData() {
-    const sunrise = this.data.sys.sunrise;
-    const sunset = this.data.sys.sunset;
-
     return {
-      sunrise: this.formatUnixToTime(sunrise),
-      sunset: this.formatUnixToTime(sunset)
+      sunrise: formatUnixToTime(this.data.sys.sunrise),
+      sunset: formatUnixToTime(this.data.sys.sunset)
     };
-  }
-
-  formatUnixToTime(unix: number): string {
-    return new Date(unix * 1000).toLocaleTimeString("es-ES", {
-      hour: "2-digit",
-      minute: "2-digit"
-    });
   }
 }

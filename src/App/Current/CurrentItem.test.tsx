@@ -13,17 +13,9 @@ describe("CurrentItem", () => {
     expect(screen.getByText(/75/i)).toBeInTheDocument();
   });
 
-  it("shows value direction in letters", () => {
-    const directionAngle = 180;
-
-    render(currentItemComponent({ sub: directionAngle }));
-
-    expect(screen.getByTestId("direction").innerHTML).toBe("S");
-  });
-
   const currentItemComponent = ({
     value = "viento",
-    sub = 100,
+    sub = "NO",
     content = "20",
     icon = "wind"
   }: Partial<CurrentItemType>): ReactNode => (

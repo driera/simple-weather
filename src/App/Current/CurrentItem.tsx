@@ -1,10 +1,9 @@
 import React, { FunctionComponent } from "react";
-import { getDirection } from "../utils";
 import styles from "./CurrentItem.module.css";
 
 export interface CurrentItemType {
   value: string;
-  sub?: number;
+  sub?: string;
   content: string;
   units?: string;
   icon: string;
@@ -23,7 +22,7 @@ const CurrentItem: FunctionComponent<CurrentItemType> = ({
         <div className={styles.title}>{value}</div>
         {!!sub && (
           <span className={styles.sub} data-testid="direction">
-            {getDirection(sub)}
+            {sub}
           </span>
         )}
         {content}

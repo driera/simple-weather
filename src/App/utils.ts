@@ -1,4 +1,4 @@
-export const getDirection = (dir: number): string => {
+export const getWindDirection = (dir: number): string => {
   const arr = ["N", "NE", "E", "SE", "S", "SO", "O", "NO"];
   let pointer = arr[0];
 
@@ -14,4 +14,11 @@ export const getDirection = (dir: number): string => {
   }
 
   return pointer;
+};
+
+export const formatUnixToTime = (unix: number): string => {
+  return new Date(unix * 1000).toLocaleTimeString("es-ES", {
+    hour: "2-digit",
+    minute: "2-digit"
+  });
 };
