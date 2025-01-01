@@ -74,9 +74,10 @@ export class CurrentWeatherEntity {
   getWeatherConditions(): CurrentWeather {
     const mainConditions = this.data.main;
     const weatherConditions = this.data.weather[0];
-    const windConditions = this.data.wind;
     const cloudConditions = this.data.clouds;
     const sunData = this.getSunData();
+    const windData = this.getWindData();
+
     return {
       pressure: mainConditions.pressure,
       temperature: mainConditions.temp,
@@ -87,9 +88,8 @@ export class CurrentWeatherEntity {
       state: weatherConditions.main,
       stateDescription: weatherConditions.description,
       stateIcon: weatherConditions.icon,
-      windSpeed: windConditions.speed,
-      windAngle: getWindDirection(windConditions.deg),
       clouds: cloudConditions.all,
+      ...windData,
       ...sunData
     };
   }
@@ -98,6 +98,15 @@ export class CurrentWeatherEntity {
     return {
       sunrise: formatUnixToTime(this.data.sys.sunrise),
       sunset: formatUnixToTime(this.data.sys.sunset)
+    };
+  }
+
+  getWindData() {
+    const windConditions = this.data.wind;
+
+    return {
+      windSpeed: windConditions.speed,
+      windAngle: getWindDirection(windConditions.deg)
     };
   }
 }
