@@ -3,17 +3,25 @@ import styles from "./Current.module.css";
 import { CurrentIntro } from "./CurrentIntro";
 import { CurrentItem } from "./CurrentItem";
 import { TitleWithLine } from "./TitleWithLine";
+import CurrentWeather from "../domain/CurrentWeather";
 
-export const CurrentView: FunctionComponent = () => {
+export const CurrentView: FunctionComponent<{
+  weatherData: CurrentWeather | null;
+}> = ({ weatherData }) => {
+  if (!weatherData) return <div>loading...</div>;
+
   return (
     <section className={styles.current}>
       <div className={styles.sun}></div>
       <div className={styles.container}>
         <h1 className={styles.title}>Tiempo hoy</h1>
         <CurrentIntro
-          location="Valencia"
+          location={weatherData.city}
           time={new Date()}
-          details={{ temperature: 16.3, conditions: "Nubes bajas" }}
+          details={{
+            temperature: weatherData.temperature,
+            conditions: weatherData.stateDescription
+          }}
         />
         <div className={styles.detail}>
           <div className={styles.detailsTitle}>
@@ -21,26 +29,26 @@ export const CurrentView: FunctionComponent = () => {
           </div>
           <CurrentItem
             value="Viento"
-            content="25"
-            sub={270}
+            content={weatherData.windSpeed.toString()}
+            sub={weatherData.windAngle}
             units="km/h"
             icon="icon-wind"
           />
           <CurrentItem
             value="Nubosidad"
-            content="23"
+            content={weatherData.clouds.toString()}
             units="%"
             icon="icon-cloud"
           />
           <CurrentItem
             value="Humedad"
-            content="39"
+            content={weatherData.humidity.toString()}
             units="%"
             icon="icon-raindrop"
           />
           <CurrentItem
             value="Presión"
-            content="1020"
+            content={weatherData.pressure.toString()}
             units="mBar"
             icon="icon-pressure"
           />
@@ -49,8 +57,16 @@ export const CurrentView: FunctionComponent = () => {
           <div className={styles.detailsTitle}>
             <TitleWithLine>Salida/Puesta de sol</TitleWithLine>
           </div>
-          <CurrentItem value="Salida sol" content="07:45" icon="icon-sunrise" />
-          <CurrentItem value="Puesta sol" content="18:34" icon="icon-sunset" />
+          <CurrentItem
+            value="Salida sol"
+            content={weatherData.sunrise.toString()}
+            icon="icon-sunrise"
+          />
+          <CurrentItem
+            value="Puesta sol"
+            content={weatherData.sunset.toString()}
+            icon="icon-sunset"
+          />
         </div>
       </div>
     </section>
