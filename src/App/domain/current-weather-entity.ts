@@ -8,8 +8,8 @@ export interface CurrentWeather {
   state: string;
   stateDescription: string;
   stateIcon: string;
-  sunrise: number;
-  sunset: number;
+  sunrise: string;
+  sunset: string;
   temperature: number;
   temperatureMax: number;
   temperatureMin: number;
@@ -74,6 +74,7 @@ export class CurrentWeatherEntity {
     const weatherConditions = this.data.weather[0];
     const windConditions = this.data.wind;
     const cloudConditions = this.data.clouds;
+    const sunConditions = this.getSunData();
     return {
       pressure: mainConditions.pressure,
       temperature: mainConditions.temp,
@@ -87,8 +88,24 @@ export class CurrentWeatherEntity {
       windSpeed: windConditions.speed,
       windAngle: windConditions.deg,
       clouds: cloudConditions.all,
-      sunrise: this.data.sys.sunrise,
-      sunset: this.data.sys.sunset
+      ...sunConditions
     };
+  }
+
+  getSunData() {
+    const sunrise = this.data.sys.sunrise;
+    const sunset = this.data.sys.sunset;
+
+    return {
+      sunrise: this.formatUnixToTime(sunrise),
+      sunset: this.formatUnixToTime(sunset)
+    };
+  }
+
+  formatUnixToTime(unix: number): string {
+    return new Date(unix * 1000).toLocaleTimeString("es-ES", {
+      hour: "2-digit",
+      minute: "2-digit"
+    });
   }
 }

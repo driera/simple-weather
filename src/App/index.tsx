@@ -1,6 +1,6 @@
 import React, { FunctionComponent, useEffect, useState } from "react";
 import { CurrentView } from "./Current/CurrentView";
-import { CurrentWeather } from "./domain/CurrentWeather";
+import { CurrentWeather } from "./domain/current-weather-entity";
 import { WeatherApiClient } from "./repositories/weather-api-client";
 
 const App: FunctionComponent = () => {

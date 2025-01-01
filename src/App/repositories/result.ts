@@ -1,4 +1,4 @@
-import { CurrentWeather } from "../domain/CurrentWeather";
+import { CurrentWeather } from "../domain/current-weather-entity";
 
 export interface Success {
   status: "success";

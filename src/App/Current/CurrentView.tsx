@@ -3,7 +3,7 @@ import styles from "./Current.module.css";
 import { CurrentIntro } from "./CurrentIntro";
 import { CurrentItem } from "./CurrentItem";
 import { TitleWithLine } from "./TitleWithLine";
-import CurrentWeather from "../domain/CurrentWeather";
+import { CurrentWeather } from "../domain/current-weather-entity";
 
 export const CurrentView: FunctionComponent<{
   weatherData: CurrentWeather | null;
