@@ -8,6 +8,14 @@ const config: Config = {
   ],
   testEnvironment: "jsdom",
   setupFilesAfterEnv: ["<rootDir>/src/setupTests.ts"],
+  transform: {
+    "^.+\\.[t|j]sx?$": "babel-jest"
+  },
+  transformIgnorePatterns: [
+    "[/\\\\]node_modules[/\\\\].+\\.(js|jsx|mjs|cjs|ts|tsx)$",
+    "^.+\\.module\\.(css|sass|scss)$"
+  ],
+  modulePaths: ["<rootDir>/src"],
   moduleNameMapper: {
     "^.+\\.(css|sass|scss)$": "identity-obj-proxy"
   },
