@@ -1,7 +1,7 @@
 import React, { FunctionComponent, useEffect, useState } from "react";
 import { CurrentView } from "./Current/CurrentView";
-import { fetchCurrentWeatherData } from "./repositories/CurrentWeatherRepository";
-import CurrentWeather from "./domain/CurrentWeather";
+import { CurrentWeather } from "./domain/CurrentWeather";
+import { WeatherApiClient } from "./repositories/weather-api-client";
 
 const App: FunctionComponent = () => {
   const [weatherData, setWeatherData] = useState<CurrentWeather | null>(null);
@@ -9,8 +9,11 @@ const App: FunctionComponent = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const data = await fetchCurrentWeatherData(cityId);
-      setWeatherData(data);
+      const weather = new WeatherApiClient().setCityId(cityId);
+      const result = await weather.getCurrentWeather();
+      if (result.status === "success") {
+        setWeatherData(result.data);
+      }
     };
 
     fetchData();

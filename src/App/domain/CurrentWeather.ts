@@ -62,27 +62,33 @@ export interface CurrentWeatherRawData {
   cod: number;
 }
 
-export const dataToCurrentWeather = (
-  data: CurrentWeatherRawData
-): CurrentWeather => {
-  return {
-    pressure: data.main.pressure,
-    temperature: data.main.temp,
-    temperatureMin: data.main.temp_min,
-    temperatureMax: data.main.temp_max,
-    humidity: data.main.humidity,
-    state: data.weather[0].main,
-    stateDescription: data.weather[0].description,
-    stateIcon: data.weather[0].icon,
-    windSpeed: data.wind.speed,
-    windAngle: data.wind.deg,
-    clouds: data.clouds.all,
-    // hour: `${moment().format('HH:mm')}h`,
-    // date: `${moment().format(`dddd, DD MMM 'YY`)}`,
-    sunrise: data.sys.sunrise,
-    sunset: data.sys.sunset,
-    city: data.name
-  };
-};
+export class CurrentWeatherEntity {
+  private data;
 
-export default CurrentWeather;
+  constructor(data: CurrentWeatherRawData) {
+    this.data = data;
+  }
+
+  getWeatherConditions(): CurrentWeather {
+    const mainConditions = this.data.main;
+    const weatherConditions = this.data.weather[0];
+    const windConditions = this.data.wind;
+    const cloudConditions = this.data.clouds;
+    return {
+      pressure: mainConditions.pressure,
+      temperature: mainConditions.temp,
+      temperatureMin: mainConditions.temp_min,
+      temperatureMax: mainConditions.temp_max,
+      humidity: mainConditions.humidity,
+      city: this.data.name,
+      state: weatherConditions.main,
+      stateDescription: weatherConditions.description,
+      stateIcon: weatherConditions.icon,
+      windSpeed: windConditions.speed,
+      windAngle: windConditions.deg,
+      clouds: cloudConditions.all,
+      sunrise: this.data.sys.sunrise,
+      sunset: this.data.sys.sunset
+    };
+  }
+}
