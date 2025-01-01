@@ -1,4 +1,4 @@
-import { CurrentWeatherEntity } from "../domain/CurrentWeather";
+import { CurrentWeatherEntity } from "../domain/current-weather-entity";
 import { Client } from "./client";
 import { Failure, failure, Success, success } from "./result";
 
