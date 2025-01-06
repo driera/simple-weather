@@ -1,3 +1,8 @@
+import {
+  getWeatherStateIcon,
+  WeatherStateIconCode,
+  WeatherStateIconSymbol
+} from "../icons/get-icon";
 import { formatUnixToTime, getWindDirection } from "../utils";
 
 export interface CurrentWeather {
@@ -9,7 +14,7 @@ export interface CurrentWeather {
   pressure: number;
   state: string;
   stateDescription: string;
-  stateIcon: string;
+  stateIcon: WeatherStateIconSymbol | null;
   sunrise: string;
   sunset: string;
   temperature: number;
@@ -28,7 +33,7 @@ export interface CurrentWeatherRawData {
     id: number;
     main: string;
     description: string;
-    icon: string;
+    icon: WeatherStateIconCode;
   }[];
   base: string;
   main: {
@@ -87,7 +92,7 @@ export class CurrentWeatherEntity {
       city: this.data.name,
       state: weatherConditions.main,
       stateDescription: weatherConditions.description,
-      stateIcon: weatherConditions.icon,
+      stateIcon: getWeatherStateIcon(weatherConditions.icon),
       clouds: cloudConditions.all,
       ...windData,
       ...sunData

@@ -22,7 +22,8 @@ describe("CurrentIntro", () => {
   it("shows correct time", () => {
     const details = {
       temperature: 10,
-      conditions: "Very cold"
+      conditions: "Very cold",
+      icon: null
     };
 
     render(currentIntroComponent({ details }));
@@ -36,7 +37,8 @@ describe("CurrentIntro", () => {
     time = new Date(2021, 0, 1, 6, 0),
     details = {
       temperature: 20,
-      conditions: "nice weather"
+      conditions: "nice weather",
+      icon: null
     }
   }: Partial<CurrentIntroType>): ReactNode => {
     return <CurrentIntro location={location} time={time} details={details} />;

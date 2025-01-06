@@ -1,3 +1,4 @@
+import { WeatherStateIconSymbol } from "../icons/get-icon";
 import styles from "./CurrentIntro.module.css";
 import React, { FunctionComponent } from "react";
 
@@ -7,6 +8,7 @@ export interface CurrentIntroType {
   details: {
     temperature: number;
     conditions: string;
+    icon: WeatherStateIconSymbol | null;
   };
 }
 
@@ -15,7 +17,7 @@ const CurrentIntro: FunctionComponent<CurrentIntroType> = ({
   time,
   details
 }: CurrentIntroType) => {
-  const { temperature, conditions } = details;
+  const { temperature, conditions, icon } = details;
 
   const formattedTime = () => {
     const hours = time.getHours();
@@ -36,6 +38,7 @@ const CurrentIntro: FunctionComponent<CurrentIntroType> = ({
       </div>
       <div className={styles.condition}>
         <span>{conditions}</span>
+        {icon ?? ""}
       </div>
     </div>
   );

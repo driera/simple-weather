@@ -44,4 +44,25 @@ describe("Current Weather Entity", () => {
       })
     );
   });
+
+  it("should weather state symbol", () => {
+    const data: CurrentWeatherRawData = {
+      ...currentWeatherDataSample,
+      weather: [
+        {
+          ...currentWeatherDataSample.weather[0],
+          icon: "03n"
+        }
+      ]
+    };
+
+    const weatherEntity = new CurrentWeatherEntity(data);
+    const currentWeather = weatherEntity.getWeatherConditions();
+
+    expect(currentWeather).toEqual(
+      expect.objectContaining({
+        stateIcon: "cloud"
+      })
+    );
+  });
 });

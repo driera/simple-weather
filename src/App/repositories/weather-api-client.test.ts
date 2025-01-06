@@ -51,7 +51,7 @@ describe("Weather Repository", () => {
       pressure: 1030,
       state: "Clouds",
       stateDescription: "nubes dispersas",
-      stateIcon: "03n",
+      stateIcon: expect.any(String),
       sunrise: expect.any(String),
       sunset: expect.any(String),
       temperature: 12.58,

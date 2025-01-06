@@ -1,4 +1,6 @@
-export const currentWeatherDataSample = {
+import { CurrentWeatherRawData } from "../../domain/current-weather-entity";
+
+export const currentWeatherDataSample: CurrentWeatherRawData = {
   coord: {
     lon: -0.3774,
     lat: 39.4697
