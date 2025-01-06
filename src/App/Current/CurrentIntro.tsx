@@ -1,7 +1,6 @@
-import { WeatherStateIconSymbol } from "../icons/get-icon";
+import React, { FunctionComponent } from "react";
 import { LazySvg } from "../icons/lazy-svg";
 import styles from "./CurrentIntro.module.css";
-import React, { FunctionComponent } from "react";
 
 export interface CurrentIntroType {
   location: string;
@@ -9,7 +8,7 @@ export interface CurrentIntroType {
   details: {
     temperature: number;
     conditions: string;
-    icon: WeatherStateIconSymbol | null;
+    icon: string | null;
   };
 }
 

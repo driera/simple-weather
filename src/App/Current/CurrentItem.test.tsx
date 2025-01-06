@@ -1,4 +1,4 @@
-import { render, screen } from "@testing-library/react";
+import { render, screen, waitFor } from "@testing-library/react";
 import React, { ReactNode } from "react";
 import { CurrentItem, CurrentItemType } from "./CurrentItem";
 
@@ -9,7 +9,7 @@ describe("CurrentItem", () => {
 
     render(currentItemComponent({ value, content }));
 
-    expect(screen.getByText(/nubes/i)).toBeInTheDocument();
+    waitFor(() => expect(screen.getByText(/nubes/i)).toBeInTheDocument());
     expect(screen.getByText(/75/i)).toBeInTheDocument();
   });
 

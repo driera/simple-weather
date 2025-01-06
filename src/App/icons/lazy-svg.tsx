@@ -1,4 +1,5 @@
 import React, { ComponentProps, FC, useEffect, useRef, useState } from "react";
+import style from "./lazy-svg.module.css";
 
 interface LazySvgProps extends ComponentProps<"svg"> {
   name: string;
@@ -36,11 +37,11 @@ export const LazySvg: FC<LazySvgProps> = ({ name, ...props }) => {
   const { error, loading, Svg } = useLazySvgImport(name);
 
   if (error) {
-    return <div>{error.message}</div>;
+    return <div className={style.error}>{error.message}</div>;
   }
 
   if (loading) {
-    return <div>Loading...</div>;
+    return <div className={style.loading}>loading SVG...</div>;
   }
 
   if (!Svg) {

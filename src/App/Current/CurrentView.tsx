@@ -33,25 +33,25 @@ export const CurrentView: FunctionComponent<{
             content={weatherData.windSpeed.toString()}
             sub={weatherData.windAngle}
             units="km/h"
-            icon="icon-wind"
+            icon="wind"
           />
           <CurrentItem
             value="Nubosidad"
             content={weatherData.clouds.toString()}
             units="%"
-            icon="icon-cloud"
+            icon="cloud"
           />
           <CurrentItem
             value="Humedad"
             content={weatherData.humidity.toString()}
             units="%"
-            icon="icon-raindrop"
+            icon="raindrop"
           />
           <CurrentItem
             value="Presión"
             content={weatherData.pressure.toString()}
             units="mBar"
-            icon="icon-pressure"
+            icon="pressure"
           />
         </div>
         <div className={styles.detail}>
@@ -61,12 +61,12 @@ export const CurrentView: FunctionComponent<{
           <CurrentItem
             value="Salida sol"
             content={weatherData.sunrise.toString()}
-            icon="icon-sunrise"
+            icon="sunrise"
           />
           <CurrentItem
             value="Puesta sol"
             content={weatherData.sunset.toString()}
-            icon="icon-sunset"
+            icon="sunset"
           />
         </div>
       </div>

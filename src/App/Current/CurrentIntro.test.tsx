@@ -1,4 +1,4 @@
-import { render, screen } from "@testing-library/react";
+import { render, screen, waitFor } from "@testing-library/react";
 import React, { ReactNode } from "react";
 import { CurrentIntro, CurrentIntroType } from "./CurrentIntro";
 
@@ -8,7 +8,7 @@ describe("CurrentIntro", () => {
 
     render(currentIntroComponent({ location }));
 
-    expect(screen.getByText(/barcelona/i)).toBeInTheDocument();
+    waitFor(() => expect(screen.getByText(/barcelona/i)).toBeInTheDocument());
   });
 
   it("shows correct time", () => {
@@ -16,7 +16,9 @@ describe("CurrentIntro", () => {
 
     render(currentIntroComponent({ time }));
 
-    expect(screen.getByText(/20:45 – 2\/5\/2021/i)).toBeInTheDocument();
+    waitFor(() =>
+      expect(screen.getByText(/20:45 – 2\/5\/2021/i)).toBeInTheDocument()
+    );
   });
 
   it("shows correct time", () => {
@@ -38,7 +40,7 @@ describe("CurrentIntro", () => {
     details = {
       temperature: 20,
       conditions: "nice weather",
-      icon: null
+      icon: "wind"
     }
   }: Partial<CurrentIntroType>): ReactNode => {
     return <CurrentIntro location={location} time={time} details={details} />;

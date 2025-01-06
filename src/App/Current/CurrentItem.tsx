@@ -1,5 +1,6 @@
 import React, { FunctionComponent } from "react";
 import styles from "./CurrentItem.module.css";
+import { LazySvg } from "../icons/lazy-svg";
 
 export interface CurrentItemType {
   value: string;
@@ -28,7 +29,9 @@ const CurrentItem: FunctionComponent<CurrentItemType> = ({
         {content}
         {units && <span className={styles.units}> {units}</span>}
       </div>
-      <div className={styles.icon}>{icon}</div>
+      <div className={styles.icon}>
+        <LazySvg name={icon} fill="white" width={48} height={48} />
+      </div>
     </div>
   );
 };
