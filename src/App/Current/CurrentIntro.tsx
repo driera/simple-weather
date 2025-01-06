@@ -1,4 +1,5 @@
 import { WeatherStateIconSymbol } from "../icons/get-icon";
+import { LazySvg } from "../icons/lazy-svg";
 import styles from "./CurrentIntro.module.css";
 import React, { FunctionComponent } from "react";
 
@@ -38,7 +39,7 @@ const CurrentIntro: FunctionComponent<CurrentIntroType> = ({
       </div>
       <div className={styles.condition}>
         <span>{conditions}</span>
-        {icon ?? ""}
+        {icon && <LazySvg name={icon} fill="white" width={32} height={32} />}
       </div>
     </div>
   );

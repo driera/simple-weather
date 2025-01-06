@@ -9,7 +9,8 @@ const config: Config = {
   testEnvironment: "jsdom",
   setupFilesAfterEnv: ["<rootDir>/src/setupTests.ts"],
   transform: {
-    "^.+\\.[t|j]sx?$": "babel-jest"
+    "^.+\\.[t|j]sx?$": "babel-jest",
+    "^.+\\.svg$": "<rootDir>/src/config/file-transform.js"
   },
   transformIgnorePatterns: [
     "[/\\\\]node_modules[/\\\\].+\\.(js|jsx|mjs|cjs|ts|tsx)$",
