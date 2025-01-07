@@ -2,26 +2,26 @@
 Weather app using React + Typescript + CSS Modules + Vite 
 
 ## DONE
-* 
-
-## TO DO
+* Add typescript
 * Get data from [Open Weather Map](https://openweathermap.org) with a simple call
 * Show data
 * Add repository factory to manage different api calls
-* Add data fallback in case of returned error by API
 * Remove API logic from client
-* Add data models for api calls
-* Group FiveDays collection by date
+* Add entity models for api calls
 * Add some layout
 * Add current weather view with basic styles
 * Add weather icons [Climacons](http://adamwhitcroft.com/climacons/)
+* Initial testing:
+  (√) Components
+  (√) Repositories
+  (√) Domain models
+* 
+
+## TO DO
+* Error boundary
+* Add data fallback in case of returned error by API
+* Group FiveDays collection by date
 * Update test location
-* Remove moment.js in favour of plain JS
-* Add typescript
-* Tests
-  ( ) Components
-  ( ) Repositories
-  ( ) Domain models
 * UI Animation Move sun vertically depending on time
 * Add 5 days forecast to page
 * Separate today & 5 days forecasts in different tabs
