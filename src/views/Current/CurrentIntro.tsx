@@ -1,5 +1,5 @@
 import React, { FunctionComponent } from "react";
-import { LazySvg } from "../icons/lazy-svg";
+import { LazySvg } from "../../components/icons/lazy-svg";
 import styles from "./CurrentIntro.module.css";
 
 export interface CurrentIntroType {

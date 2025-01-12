@@ -1,6 +1,6 @@
 import React, { FunctionComponent } from "react";
 import styles from "./CurrentItem.module.css";
-import { LazySvg } from "../icons/lazy-svg";
+import { LazySvg } from "../../components/icons/lazy-svg";
 
 export interface CurrentItemType {
   value: string;

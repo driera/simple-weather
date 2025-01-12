@@ -2,7 +2,7 @@ import {
   getWeatherStateIcon,
   WeatherStateIconCode,
   WeatherStateIconSymbol
-} from "../icons/get-icon";
+} from "../components/icons/get-icon";
 import { formatUnixToTime, getWindDirection } from "../utils";
 
 export interface CurrentWeather {

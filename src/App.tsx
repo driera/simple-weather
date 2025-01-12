@@ -1,5 +1,5 @@
 import React, { FunctionComponent, useEffect, useState } from "react";
-import { CurrentView } from "./Current/CurrentView";
+import { CurrentView } from "./views/Current/CurrentView";
 import { CurrentWeather } from "./domain/current-weather-entity";
 import { WeatherApiClient } from "./repositories/weather-api-client";
 import { ErrorBoundary } from "./components/ErrorBoundary";
