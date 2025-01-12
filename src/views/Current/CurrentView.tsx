@@ -1,5 +1,5 @@
 import { FunctionComponent } from "react";
-import styles from "./Current.module.css";
+import styles from "./CurrentView.module.css";
 import { CurrentIntro } from "./CurrentIntro";
 import { CurrentItem } from "./CurrentItem";
 import { TitleWithLine } from "./TitleWithLine";
@@ -14,7 +14,7 @@ export const CurrentView: FunctionComponent<{
     <section className={styles.current}>
       <div className={styles.sun}></div>
       <div className={styles.container}>
-        <h1 className={styles.title}>Tiempo hoy</h1>
+        <h1 className={styles.title}>Hoy</h1>
         <CurrentIntro
           location={weatherData.city}
           time={new Date()}

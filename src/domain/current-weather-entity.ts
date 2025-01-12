@@ -83,13 +83,10 @@ export class CurrentWeatherEntity {
     const cloudConditions = this.data.clouds;
     const sunData = this.getSunData();
     const windData = this.getWindData();
+    const tempData = this.getTemperatureData();
 
     return {
       pressure: mainConditions.pressure,
-      temperature: mainConditions.temp,
-      temperatureFealing: mainConditions.feels_like,
-      temperatureMin: mainConditions.temp_min,
-      temperatureMax: mainConditions.temp_max,
       humidity: mainConditions.humidity,
       city: this.data.name,
       state: weatherConditions.main,
@@ -97,7 +94,8 @@ export class CurrentWeatherEntity {
       stateIcon: getWeatherStateIcon(weatherConditions.icon),
       clouds: cloudConditions.all,
       ...windData,
-      ...sunData
+      ...sunData,
+      ...tempData
     };
   }
 
@@ -114,6 +112,17 @@ export class CurrentWeatherEntity {
     return {
       windSpeed: windConditions.speed,
       windAngle: getWindDirection(windConditions.deg)
+    };
+  }
+
+  getTemperatureData() {
+    const mainConditions = this.data.main;
+
+    return {
+      temperature: Math.round(mainConditions.temp),
+      temperatureFealing: Math.round(mainConditions.feels_like),
+      temperatureMin: Math.round(mainConditions.temp_min),
+      temperatureMax: Math.round(mainConditions.temp_max)
     };
   }
 }

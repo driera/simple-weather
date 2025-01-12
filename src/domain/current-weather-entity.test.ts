@@ -45,7 +45,7 @@ describe("Current Weather Entity", () => {
     );
   });
 
-  it("should weather state symbol", () => {
+  it("should return weather state symbol", () => {
     const data: CurrentWeatherRawData = {
       ...currentWeatherDataSample,
       weather: [
@@ -62,6 +62,31 @@ describe("Current Weather Entity", () => {
     expect(currentWeather).toEqual(
       expect.objectContaining({
         stateIcon: "cloud"
+      })
+    );
+  });
+
+  it("should round temperature values", () => {
+    const data: CurrentWeatherRawData = {
+      ...currentWeatherDataSample,
+      main: {
+        ...currentWeatherDataSample.main,
+        temp: 20.75,
+        temp_min: 20.12,
+        temp_max: 21.9,
+        feels_like: 20.5
+      }
+    };
+
+    const weatherEntity = new CurrentWeatherEntity(data);
+    const currentWeather = weatherEntity.getWeatherConditions();
+
+    expect(currentWeather).toEqual(
+      expect.objectContaining({
+        temperature: 21,
+        temperatureMin: 20,
+        temperatureMax: 22,
+        temperatureFealing: 21
       })
     );
   });

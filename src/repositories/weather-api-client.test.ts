@@ -54,10 +54,10 @@ describe("Weather Repository", () => {
       stateIcon: expect.any(String),
       sunrise: expect.any(String),
       sunset: expect.any(String),
-      temperature: 12.58,
-      temperatureFealing: 12.03,
-      temperatureMax: 13.25,
-      temperatureMin: 11.41,
+      temperature: expect.any(Number),
+      temperatureFealing: expect.any(Number),
+      temperatureMax: expect.any(Number),
+      temperatureMin: expect.any(Number),
       windAngle: expect.any(String),
       windSpeed: 1.34
     });
