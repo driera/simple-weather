@@ -3,37 +3,56 @@
   margin-bottom: 20px;
 }
 
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
 .location {
-  font-size: 32px;
-  font-weight: 800;
+  font-size: 42px;
 }
 
 .time {
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 600;
 }
 
-.temp {
-  padding-top: 40px;
-  font-size: 100px;
-  line-height: 1;
-}
-
-.temp-content {
-  display: inline-block;
-  vertical-align: middle;
-}
-
-.temp-symbol {
-  display: inline-block;
-  margin-left: 5px;
-  vertical-align: top;
-}
-
-.condition {
+.content {
   display: flex;
+  justify-content: space-between;
   align-items: center;
+}
+
+.conditions {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
   font-size: 18px;
   font-weight: 600;
   text-transform: capitalize;
+}
+
+.temperature {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.temp-content {
+  position: relative;
+  font-size: 100px;
+}
+
+.temp-symbol {
+  position: absolute;
+  top: -5px;
+  right: -20px;
+  margin-left: 5px;
+  vertical-align: top;
+  font-size: 50px
+}
+
+.temp-feeling {
+  text-align: end;
 }

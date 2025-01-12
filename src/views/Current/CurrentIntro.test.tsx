@@ -21,17 +21,19 @@ describe("CurrentIntro", () => {
     );
   });
 
-  it("shows correct time", () => {
+  it("shows conditions", () => {
     const details = {
       temperature: 10,
+      temperatureFealing: 12,
       conditions: "Very cold",
-      icon: null
+      icon: "sun"
     };
 
     render(currentIntroComponent({ details }));
 
-    expect(screen.getByText(/10/i)).toBeInTheDocument();
+    waitFor(() => expect(screen.getByText(/10/i)).toBeInTheDocument());
     expect(screen.getByText(/very cold/i)).toBeInTheDocument();
+    expect(screen.getByText(/sensación 12º/i)).toBeInTheDocument();
   });
 
   const currentIntroComponent = ({
@@ -39,6 +41,7 @@ describe("CurrentIntro", () => {
     time = new Date(2021, 0, 1, 6, 0),
     details = {
       temperature: 20,
+      temperatureFealing: 18,
       conditions: "nice weather",
       icon: "wind"
     }

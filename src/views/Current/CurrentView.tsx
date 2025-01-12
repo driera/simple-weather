@@ -20,6 +20,7 @@ export const CurrentView: FunctionComponent<{
           time={new Date()}
           details={{
             temperature: weatherData.temperature,
+            temperatureFealing: weatherData.temperatureFealing,
             conditions: weatherData.stateDescription,
             icon: weatherData.stateIcon
           }}

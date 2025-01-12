@@ -55,6 +55,7 @@ describe("Weather Repository", () => {
       sunrise: expect.any(String),
       sunset: expect.any(String),
       temperature: 12.58,
+      temperatureFealing: 12.03,
       temperatureMax: 13.25,
       temperatureMin: 11.41,
       windAngle: expect.any(String),

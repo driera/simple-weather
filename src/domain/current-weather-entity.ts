@@ -18,6 +18,7 @@ export interface CurrentWeather {
   sunrise: string;
   sunset: string;
   temperature: number;
+  temperatureFealing: number;
   temperatureMax: number;
   temperatureMin: number;
   windAngle: string;
@@ -86,6 +87,7 @@ export class CurrentWeatherEntity {
     return {
       pressure: mainConditions.pressure,
       temperature: mainConditions.temp,
+      temperatureFealing: mainConditions.feels_like,
       temperatureMin: mainConditions.temp_min,
       temperatureMax: mainConditions.temp_max,
       humidity: mainConditions.humidity,
