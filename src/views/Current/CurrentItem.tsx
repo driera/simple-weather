@@ -19,8 +19,11 @@ const CurrentItem: FunctionComponent<CurrentItemType> = ({
 }) => {
   return (
     <div className={styles.item}>
+      <div className={styles.title}>
+        <LazySvg name={icon} fill="white" width={24} height={24} />
+        <span>{value}</span>
+      </div>
       <div className={styles.content}>
-        <div className={styles.title}>{value}</div>
         {!!sub && (
           <span className={styles.sub} data-testid="direction">
             {sub}
@@ -28,9 +31,6 @@ const CurrentItem: FunctionComponent<CurrentItemType> = ({
         )}
         {content}
         {units && <span className={styles.units}> {units}</span>}
-      </div>
-      <div className={styles.icon}>
-        <LazySvg name={icon} fill="white" width={48} height={48} />
       </div>
     </div>
   );
