@@ -2,6 +2,7 @@ import React, { FunctionComponent, useEffect, useState } from "react";
 import { CurrentView } from "./Current/CurrentView";
 import { CurrentWeather } from "./domain/current-weather-entity";
 import { WeatherApiClient } from "./repositories/weather-api-client";
+import { ErrorBoundary } from "./components/ErrorBoundary";
 
 const App: FunctionComponent = () => {
   const [weatherData, setWeatherData] = useState<CurrentWeather | null>(null);
@@ -19,7 +20,11 @@ const App: FunctionComponent = () => {
     fetchData();
   }, []);
 
-  return <CurrentView weatherData={weatherData} />;
+  return (
+    <ErrorBoundary>
+      <CurrentView weatherData={weatherData} />;
+    </ErrorBoundary>
+  );
 };
 
 export default App;

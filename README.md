@@ -15,11 +15,12 @@ Weather app using React + Typescript + CSS Modules + Vite
   (√) Components
   (√) Repositories
   (√) Domain models
+* Error boundary
 * 
 
 ## TO DO
-* Error boundary
 * Add data fallback in case of returned error by API
+* Add FiveDays prediction
 * Group FiveDays collection by date
 * Update test location
 * UI Animation Move sun vertically depending on time
