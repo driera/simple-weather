@@ -4,10 +4,12 @@ import { failure } from "./result";
 import { WeatherApiClient } from "./weather-api-client";
 
 describe("Weather Repository", () => {
-  it("should return error if city id is not provided", async () => {
+  it("should return error if city id or coordinates are not provided", async () => {
     const result = await new WeatherApiClient().getCurrentWeather();
 
-    expect(result).toEqual(failure("City id is required"));
+    expect(result).toEqual(
+      failure("City id or location coordinates are required")
+    );
   });
 
   it("retrieves data if city is provided", async () => {
@@ -20,6 +22,23 @@ describe("Weather Repository", () => {
     expect(fetch).toHaveBeenCalledWith(
       expect.stringContaining(
         `https://api.openweathermap.org/data/2.5/weather?id=${cityId}&units=metric&lang=es`
+      ),
+      {
+        method: "GET"
+      }
+    );
+  });
+
+  it("retrieves data if coordinates are provided", async () => {
+    const coordinates = { lat: 39.46975, lon: -0.37739 };
+    const fetch = fetchMock();
+
+    const weather = new WeatherApiClient().setCoordinates(coordinates);
+    await weather.getCurrentWeather();
+
+    expect(fetch).toHaveBeenCalledWith(
+      expect.stringContaining(
+        `https://api.openweathermap.org/data/2.5/weather?lat=${coordinates.lat}&lon=${coordinates.lon}&units=metric&lang=es`
       ),
       {
         method: "GET"

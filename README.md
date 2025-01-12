@@ -16,17 +16,17 @@ Weather app using React + Typescript + CSS Modules + Vite
   (√) Repositories
   (√) Domain models
 * Error boundary
-* 
+* Call weather API depending on location coordinates, instead of city Id
 
 ## TO DO
+* Get user coordinates using navigator geolocation API
 * Add data fallback in case of returned error by API
 * Add FiveDays prediction
 * Group FiveDays collection by date
 * Update test location
 * UI Animation Move sun vertically depending on time
-* Add 5 days forecast to page
 * Separate today & 5 days forecasts in different tabs
-* Add location search with google places api
+* Add location search with google places api + [OpenWeather geocoding API](https://openweathermap.org/api/geocoding-api)
 * Store data (store it in localstorage creating a timestamp to renew the info past 10 minutes).
 * Deploy everything to netlify
 
