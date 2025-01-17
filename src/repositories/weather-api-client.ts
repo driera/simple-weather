@@ -1,5 +1,5 @@
 import {
-  CurrentWeather,
+  CurrentWeatherData,
   currentWeatherEntity
 } from "../domain/current-weather-entity";
 import {
@@ -21,7 +21,7 @@ export class WeatherApiClient {
   units = "metric";
   coordinates: { lat: number; lon: number } | null = null;
 
-  async getCurrentWeather(): Promise<Success<CurrentWeather> | Failure> {
+  async getCurrentWeather(): Promise<Success<CurrentWeatherData> | Failure> {
     if (!this.isLocationProvided())
       return failure(NO_CITY_ID_OR_COORDINATES_ERROR);
 

@@ -1,6 +1,6 @@
 import React, { FunctionComponent, useEffect, useState } from "react";
-import { CurrentView } from "./views/Current/CurrentView";
-import { CurrentWeather } from "./domain/current-weather-entity";
+import { CurrentWeather } from "./components/CurrentWeather/CurrentWeather";
+import { CurrentWeatherData } from "./domain/current-weather-entity";
 import { WeatherApiClient } from "./repositories/weather-api-client";
 import { ErrorBoundary } from "./components/ErrorBoundary";
 import { useGeoLocation } from "./useGeoLocation";
@@ -8,7 +8,9 @@ import styles from "./App.module.css";
 import { FiveDaysForecast, Forecast } from "./domain/five-days-forecast-entity";
 
 const App: FunctionComponent = () => {
-  const [weatherData, setWeatherData] = useState<CurrentWeather | null>(null);
+  const [weatherData, setWeatherData] = useState<CurrentWeatherData | null>(
+    null
+  );
   const [fiveDaysData, setFiveDaysData] = useState<FiveDaysForecast | null>(
     null
   );
@@ -40,7 +42,7 @@ const App: FunctionComponent = () => {
         <div className={styles.header}>
           <h1 className={styles.title}>Hoy</h1>
         </div>
-        <CurrentView weatherData={weatherData} />
+        <CurrentWeather weatherData={weatherData} />
         <div className={styles.fiveDays}>
           <h2 className={styles.title}>Próximas horas</h2>
           {fiveDaysData && (

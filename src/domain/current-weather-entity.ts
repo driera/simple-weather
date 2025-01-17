@@ -5,7 +5,7 @@ import {
 } from "../components/icons/get-icon";
 import { formatUnixToTime, getWindDirection } from "../utils";
 
-export interface CurrentWeather {
+export interface CurrentWeatherData {
   city: string;
   clouds: number;
   humidity: number;
@@ -70,7 +70,7 @@ export interface CurrentWeatherRawData {
 
 export const currentWeatherEntity = (
   data: CurrentWeatherRawData
-): CurrentWeather => {
+): CurrentWeatherData => {
   const mainConditions = data.main;
   const weatherConditions = data.weather[0];
   const cloudConditions = data.clouds;

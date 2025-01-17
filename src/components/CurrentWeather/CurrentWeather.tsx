@@ -1,12 +1,12 @@
 import { FunctionComponent } from "react";
-import styles from "./CurrentView.module.css";
+import styles from "./CurrentWeather.module.css";
 import { CurrentIntro } from "./CurrentIntro";
 import { CurrentItem } from "./CurrentItem";
 import { TitleWithLine } from "./TitleWithLine";
-import { CurrentWeather } from "../../domain/current-weather-entity";
+import { CurrentWeatherData } from "../../domain/current-weather-entity";
 
-export const CurrentView: FunctionComponent<{
-  weatherData: CurrentWeather | null;
+export const CurrentWeather: FunctionComponent<{
+  weatherData: CurrentWeatherData | null;
 }> = ({ weatherData }) => {
   if (!weatherData) return <div style={{ color: "#000" }}>loading...</div>;
 
