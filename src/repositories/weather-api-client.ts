@@ -3,7 +3,7 @@ import {
   currentWeatherEntity
 } from "../domain/current-weather-entity";
 import {
-  FiveDaysForecast,
+  FiveDaysForecastData,
   fiveDaysForecastEntity
 } from "../domain/five-days-forecast-entity"; // new import
 import { Client } from "./client";
@@ -37,7 +37,7 @@ export class WeatherApiClient {
     }
   }
 
-  async getFiveDaysWeather(): Promise<Success<FiveDaysForecast> | Failure> {
+  async getFiveDaysWeather(): Promise<Success<FiveDaysForecastData> | Failure> {
     if (!this.isLocationProvided())
       return failure(NO_CITY_ID_OR_COORDINATES_ERROR);
 

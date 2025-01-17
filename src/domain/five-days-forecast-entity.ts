@@ -5,7 +5,7 @@ import {
   WeatherStateIconSymbol
 } from "../components/icons/get-icon";
 
-export interface FiveDaysForecast {
+export interface FiveDaysForecastData {
   city: string;
   list: Forecast[];
 }
@@ -77,7 +77,7 @@ export interface FiveDaysForecastRawData {
 
 export const fiveDaysForecastEntity = (
   data: FiveDaysForecastRawData
-): FiveDaysForecast => {
+): FiveDaysForecastData => {
   const city = data.city.name;
   const list = data.list.map((forecast) => ({
     date: forecast.dt,

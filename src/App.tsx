@@ -1,17 +1,21 @@
 import React, { FunctionComponent, useEffect, useState } from "react";
+
 import { CurrentWeather } from "./components/CurrentWeather/CurrentWeather";
 import { CurrentWeatherData } from "./domain/current-weather-entity";
+import { FiveDaysForecast } from "./components/FiveDaysForecast/FiveDaysForecast";
+import { FiveDaysForecastData } from "./domain/five-days-forecast-entity";
+
 import { WeatherApiClient } from "./repositories/weather-api-client";
-import { ErrorBoundary } from "./components/ErrorBoundary";
 import { useGeoLocation } from "./useGeoLocation";
+import { ErrorBoundary } from "./components/ErrorBoundary";
+
 import styles from "./App.module.css";
-import { FiveDaysForecast, Forecast } from "./domain/five-days-forecast-entity";
 
 const App: FunctionComponent = () => {
   const [weatherData, setWeatherData] = useState<CurrentWeatherData | null>(
     null
   );
-  const [fiveDaysData, setFiveDaysData] = useState<FiveDaysForecast | null>(
+  const [fiveDaysData, setFiveDaysData] = useState<FiveDaysForecastData | null>(
     null
   );
   const coordinates = useGeoLocation();
@@ -43,24 +47,7 @@ const App: FunctionComponent = () => {
           <h1 className={styles.title}>Hoy</h1>
         </div>
         <CurrentWeather weatherData={weatherData} />
-        <div className={styles.fiveDays}>
-          <h2 className={styles.title}>Próximas horas</h2>
-          {fiveDaysData && (
-            <div className={styles.fiveDaysList}>
-              {fiveDaysData.list.map((item: Forecast) => (
-                <div className={styles.listItem} key={item.date}>
-                  <div className={styles.itemDate}>
-                    {new Date(item.date * 1000).toLocaleString("es-ES", {
-                      dateStyle: "short",
-                      timeStyle: "short"
-                    })}
-                  </div>
-                  <div className={styles.temperature}>{item.temperature}º</div>
-                </div>
-              ))}
-            </div>
-          )}
-        </div>
+        <FiveDaysForecast fiveDaysData={fiveDaysData} />
       </section>
     </ErrorBoundary>
   );

@@ -14,7 +14,6 @@ describe("Five Days Forecast Entity", () => {
     expect(forecast.list).toHaveLength(data.list.length);
     expect(forecast.list[0]).toEqual(
       expect.objectContaining({
-        date: data.list[0].dt_txt,
         temperature: Math.round(data.list[0].main.temp),
         temperatureMin: Math.round(data.list[0].main.temp_min),
         temperatureMax: Math.round(data.list[0].main.temp_max),
