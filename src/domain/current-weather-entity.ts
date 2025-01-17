@@ -8,8 +8,6 @@ import { formatUnixToTime, getWindDirection } from "../utils";
 export interface CurrentWeather {
   city: string;
   clouds: number;
-  // date: string;
-  // hour: string;
   humidity: number;
   pressure: number;
   state: string;
@@ -70,59 +68,60 @@ export interface CurrentWeatherRawData {
   cod: number;
 }
 
-export class CurrentWeatherEntity {
-  private data;
+export const currentWeatherEntity = (
+  data: CurrentWeatherRawData
+): CurrentWeather => {
+  const mainConditions = data.main;
+  const weatherConditions = data.weather[0];
+  const cloudConditions = data.clouds;
 
-  constructor(data: CurrentWeatherRawData) {
-    this.data = data;
-  }
+  const sunData = formatSunData(data.sys.sunrise, data.sys.sunset);
+  const windData = formatWindData(data.wind.speed, data.wind.deg);
+  const tempData = formatTemperatureData(mainConditions);
 
-  getWeatherConditions(): CurrentWeather {
-    const mainConditions = this.data.main;
-    const weatherConditions = this.data.weather[0];
-    const cloudConditions = this.data.clouds;
-    const sunData = this.getSunData();
-    const windData = this.getWindData();
-    const tempData = this.getTemperatureData();
+  return {
+    pressure: mainConditions.pressure,
+    humidity: mainConditions.humidity,
+    city: data.name,
+    state: weatherConditions.main,
+    stateDescription: weatherConditions.description,
+    stateIcon: getWeatherStateIcon(weatherConditions.icon),
+    clouds: cloudConditions.all,
+    ...windData,
+    ...sunData,
+    ...tempData
+  };
+};
 
-    return {
-      pressure: mainConditions.pressure,
-      humidity: mainConditions.humidity,
-      city: this.data.name,
-      state: weatherConditions.main,
-      stateDescription: weatherConditions.description,
-      stateIcon: getWeatherStateIcon(weatherConditions.icon),
-      clouds: cloudConditions.all,
-      ...windData,
-      ...sunData,
-      ...tempData
-    };
-  }
+const formatTemperatureData = ({
+  temp,
+  feels_like,
+  temp_min,
+  temp_max
+}: {
+  temp: number;
+  feels_like: number;
+  temp_min: number;
+  temp_max: number;
+}) => {
+  return {
+    temperature: Math.round(temp),
+    temperatureFealing: Math.round(feels_like),
+    temperatureMin: Math.round(temp_min),
+    temperatureMax: Math.round(temp_max)
+  };
+};
 
-  getSunData() {
-    return {
-      sunrise: formatUnixToTime(this.data.sys.sunrise),
-      sunset: formatUnixToTime(this.data.sys.sunset)
-    };
-  }
+const formatWindData = (speed: number, deg: number) => {
+  return {
+    windSpeed: speed,
+    windAngle: getWindDirection(deg)
+  };
+};
 
-  getWindData() {
-    const windConditions = this.data.wind;
-
-    return {
-      windSpeed: windConditions.speed,
-      windAngle: getWindDirection(windConditions.deg)
-    };
-  }
-
-  getTemperatureData() {
-    const mainConditions = this.data.main;
-
-    return {
-      temperature: Math.round(mainConditions.temp),
-      temperatureFealing: Math.round(mainConditions.feels_like),
-      temperatureMin: Math.round(mainConditions.temp_min),
-      temperatureMax: Math.round(mainConditions.temp_max)
-    };
-  }
-}
+const formatSunData = (sunrise: number, sunset: number) => {
+  return {
+    sunrise: formatUnixToTime(sunrise),
+    sunset: formatUnixToTime(sunset)
+  };
+};

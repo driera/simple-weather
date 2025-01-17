@@ -1,6 +1,6 @@
 import { currentWeatherDataSample } from "../repositories/__test_helpers__/data-samples";
 import {
-  CurrentWeatherEntity,
+  currentWeatherEntity,
   CurrentWeatherRawData
 } from "./current-weather-entity";
 
@@ -15,8 +15,7 @@ describe("Current Weather Entity", () => {
       }
     };
 
-    const weatherEntity = new CurrentWeatherEntity(data);
-    const currentWeather = weatherEntity.getWeatherConditions();
+    const currentWeather = currentWeatherEntity(data);
 
     expect(currentWeather).toEqual(
       expect.objectContaining({
@@ -35,8 +34,7 @@ describe("Current Weather Entity", () => {
       }
     };
 
-    const weatherEntity = new CurrentWeatherEntity(data);
-    const currentWeather = weatherEntity.getWeatherConditions();
+    const currentWeather = currentWeatherEntity(data);
 
     expect(currentWeather).toEqual(
       expect.objectContaining({
@@ -56,8 +54,7 @@ describe("Current Weather Entity", () => {
       ]
     };
 
-    const weatherEntity = new CurrentWeatherEntity(data);
-    const currentWeather = weatherEntity.getWeatherConditions();
+    const currentWeather = currentWeatherEntity(data);
 
     expect(currentWeather).toEqual(
       expect.objectContaining({
@@ -78,8 +75,7 @@ describe("Current Weather Entity", () => {
       }
     };
 
-    const weatherEntity = new CurrentWeatherEntity(data);
-    const currentWeather = weatherEntity.getWeatherConditions();
+    const currentWeather = currentWeatherEntity(data);
 
     expect(currentWeather).toEqual(
       expect.objectContaining({

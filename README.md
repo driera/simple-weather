@@ -17,11 +17,11 @@ Weather app using React + Typescript + CSS Modules + Vite
   (√) Domain models
 * Error boundary
 * Call weather API depending on location coordinates, instead of city Id
+* Get user coordinates using navigator geolocation API
+* Add FiveDays prediction
 
 ## TO DO
-* Get user coordinates using navigator geolocation API
 * Add data fallback in case of returned error by API
-* Add FiveDays prediction
 * Group FiveDays collection by date
 * Update test location
 * UI Animation Move sun vertically depending on time

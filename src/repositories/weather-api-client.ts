@@ -1,4 +1,4 @@
-import { CurrentWeatherEntity } from "../domain/current-weather-entity";
+import { currentWeatherEntity } from "../domain/current-weather-entity";
 import { Client } from "./client";
 import { Failure, failure, Success, success } from "./result";
 
@@ -23,8 +23,8 @@ export class WeatherApiClient {
       const response = await new Client().get(url);
       this.ensureResponseOk(response);
 
-      const currentWeather = new CurrentWeatherEntity(await response.json());
-      return success(currentWeather.getWeatherConditions());
+      const currentWeather = currentWeatherEntity(await response.json());
+      return success(currentWeather);
     } catch (error) {
       return this.reportFailure(error as Error);
     }
