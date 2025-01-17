@@ -1,11 +1,9 @@
-import { CurrentWeather } from "../domain/current-weather-entity";
-
-export interface Success {
+export interface Success<T> {
   status: "success";
-  data: CurrentWeather;
+  data: T;
 }
 
-export const success = (data: CurrentWeather): Success => ({
+export const success = <T>(data: T): Success<T> => ({
   status: "success",
   data
 });

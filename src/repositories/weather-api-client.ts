@@ -1,4 +1,11 @@
-import { currentWeatherEntity } from "../domain/current-weather-entity";
+import {
+  CurrentWeather,
+  currentWeatherEntity
+} from "../domain/current-weather-entity";
+import {
+  FiveDaysForecast,
+  fiveDaysForecastEntity
+} from "../domain/five-days-forecast-entity"; // new import
 import { Client } from "./client";
 import { Failure, failure, Success, success } from "./result";
 
@@ -14,7 +21,7 @@ export class WeatherApiClient {
   units = "metric";
   coordinates: { lat: number; lon: number } | null = null;
 
-  async getCurrentWeather(): Promise<Success | Failure> {
+  async getCurrentWeather(): Promise<Success<CurrentWeather> | Failure> {
     if (!this.isLocationProvided())
       return failure(NO_CITY_ID_OR_COORDINATES_ERROR);
 
@@ -30,7 +37,7 @@ export class WeatherApiClient {
     }
   }
 
-  async getFiveDaysWeather(): Promise<Success | Failure> {
+  async getFiveDaysWeather(): Promise<Success<FiveDaysForecast> | Failure> {
     if (!this.isLocationProvided())
       return failure(NO_CITY_ID_OR_COORDINATES_ERROR);
 
@@ -39,7 +46,7 @@ export class WeatherApiClient {
       const response = await new Client().get(url);
       this.ensureResponseOk(response);
 
-      const forecastData = await response.json();
+      const forecastData = fiveDaysForecastEntity(await response.json());
       return success(forecastData);
     } catch (error) {
       return this.reportFailure(error as Error);
