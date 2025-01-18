@@ -47,4 +47,51 @@ describe("FiveDaysForecast", () => {
 
     expect(result[0].hour).toBe("7 AM");
   });
+
+  it("filters data to use items with 6-hour step", () => {
+    const dataCollection: FiveDaysForecastData = {
+      city: "Barcelona",
+      list: [
+        {
+          date: 1737266400,
+          temperature: 8,
+          temperatureMin: 6,
+          temperatureMax: 12,
+          state: "clouds",
+          stateDescription: "Today is cloudy",
+          stateIcon: "sun",
+          windSpeed: 22,
+          windAngle: "NE"
+        },
+        {
+          date: 1737288000,
+          temperature: 10,
+          temperatureMin: 8,
+          temperatureMax: 14,
+          state: "clear",
+          stateDescription: "Clear sky",
+          stateIcon: "sun",
+          windSpeed: 15,
+          windAngle: "E"
+        },
+        {
+          date: 1737309600,
+          temperature: 12,
+          temperatureMin: 10,
+          temperatureMax: 16,
+          state: "rain",
+          stateDescription: "Light rain",
+          stateIcon: "cloud",
+          windSpeed: 10,
+          windAngle: "S"
+        }
+      ]
+    };
+
+    const result = formatForecastData(dataCollection);
+
+    expect(result).toHaveLength(2);
+    expect(result[0].date).toBe(1737266400);
+    expect(result[1].date).toBe(1737309600);
+  });
 });

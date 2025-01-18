@@ -123,14 +123,16 @@ interface ChartData {
 export const formatForecastData = (
   fiveDaysData: FiveDaysForecastData
 ): ChartData[] => {
-  return fiveDaysData.list.map((data: Forecast) => {
-    return {
-      date: data.date,
-      temperature: data.temperature,
-      dayOfTheWeek: getDayOfTheWeek(data.date),
-      hour: getFormattedHour(data.date)
-    };
-  });
+  return fiveDaysData.list
+    .filter((_, index) => index % 2 === 0)
+    .map((data: Forecast) => {
+      return {
+        date: data.date,
+        temperature: data.temperature,
+        dayOfTheWeek: getDayOfTheWeek(data.date),
+        hour: getFormattedHour(data.date)
+      };
+    });
 };
 
 const getDayOfTheWeek = (timestamp: number): string => {
