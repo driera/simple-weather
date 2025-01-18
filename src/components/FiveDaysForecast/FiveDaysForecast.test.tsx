@@ -25,7 +25,30 @@ describe("FiveDaysForecast", () => {
     expect(result[0].dayOfTheWeek).toBe("D19");
   });
 
-  it("formats the date the hour in AM/PM format", () => {
+  it("formats the date to get a long date", () => {
+    const dataCollection: FiveDaysForecastData = {
+      city: "Barcelona",
+      list: [
+        {
+          date: 1737266400,
+          temperature: 8,
+          temperatureMin: 6,
+          temperatureMax: 12,
+          state: "clouds",
+          stateDescription: "Today is cloudy",
+          stateIcon: "sun",
+          windSpeed: 22,
+          windAngle: "NE"
+        }
+      ]
+    };
+
+    const result = formatForecastData(dataCollection);
+
+    expect(result[0].dateLong).toBe("domingo, 19 de enero, 7:00");
+  });
+
+  it("formats the date to get the hour in AM/PM format", () => {
     const dataCollection: FiveDaysForecastData = {
       city: "Barcelona",
       list: [

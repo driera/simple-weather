@@ -44,6 +44,11 @@ export const FiveDaysForecast: FunctionComponent<{
     },
     xAxis: [
       {
+        id: "date",
+        categories: chartData.map((data) => data.date.toString()),
+        visible: false
+      },
+      {
         id: "days",
         categories: chartData.map((data) => data.dayOfTheWeek),
         lineColor: "#FFFFFF88",
@@ -52,7 +57,8 @@ export const FiveDaysForecast: FunctionComponent<{
             color: "white",
             fontSize: "12px"
           }
-        }
+        },
+        linkedTo: 0
       },
       {
         id: "hours",
@@ -83,6 +89,14 @@ export const FiveDaysForecast: FunctionComponent<{
       gridLineColor: "#FFFFFF44",
       gridLineWidth: 1,
       gridLineDashStyle: "Dot"
+    },
+    tooltip: {
+      shared: true,
+      formatter: function () {
+        const data = chartData[this.index];
+        const dateLong = data.dateLong;
+        return `${dateLong}<br/>Temperatura: ${this.y}ºC`;
+      }
     },
     series: [
       {
@@ -117,6 +131,7 @@ interface ChartData {
   date: number;
   temperature: number;
   dayOfTheWeek: string;
+  dateLong: string;
   hour: string;
 }
 
@@ -130,6 +145,7 @@ export const formatForecastData = (
         date: data.date,
         temperature: data.temperature,
         dayOfTheWeek: getDayOfTheWeek(data.date),
+        dateLong: getDateLong(data.date),
         hour: getFormattedHour(data.date)
       };
     });
@@ -144,6 +160,16 @@ const getDayOfTheWeek = (timestamp: number): string => {
     .toUpperCase();
 
   return `${dayOfWeek}${dayOfMonth}`;
+};
+
+const getDateLong = (timestamp: number): string => {
+  return new Date(timestamp * 1000).toLocaleString("es-ES", {
+    weekday: "long",
+    day: "numeric",
+    month: "long",
+    hour: "numeric",
+    minute: "numeric"
+  });
 };
 
 const getFormattedHour = (timestamp: number): string => {
