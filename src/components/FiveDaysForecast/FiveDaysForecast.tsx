@@ -228,15 +228,12 @@ const getDayOfTheWeek = (timestamp: number): string => {
   const date = new Date(timestamp * 1000);
   const dayOfMonth = date.getDate();
   const today = new Date().getDate();
-  const dayOfWeek =
-    dayOfMonth === today
-      ? "Hoy"
-      : date
-          .toLocaleString("es-ES", { weekday: "short" })
-          .charAt(0)
-          .toUpperCase();
+  const dayOfWeek = date
+    .toLocaleString("es-ES", { weekday: "short" })
+    .charAt(0)
+    .toUpperCase();
 
-  return `${dayOfWeek}${dayOfMonth}`;
+  return dayOfMonth === today ? "Hoy" : `${dayOfWeek}${dayOfMonth}`;
 };
 
 const getDateLong = (timestamp: number): string => {
