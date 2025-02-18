@@ -1,8 +1,9 @@
 import { renderHook } from "@testing-library/react";
 import { useGeoLocation } from "./useGeoLocation";
 
+const navigationGeolocationImplementation = navigator.geolocation;
+
 describe("useGeoLocation", () => {
-  const realGeolocation = navigator.geolocation;
   const geolocationMock = {
     getCurrentPosition: jest.fn(),
     watchPosition: jest.fn(),
@@ -10,13 +11,16 @@ describe("useGeoLocation", () => {
   };
 
   beforeEach(() => {
-    // @ts-expect-error 'geolocation' is a read-only property
-    navigator.geolocation = geolocationMock;
+    Object.defineProperty(navigator, "geolocation", {
+      writable: true,
+      value: geolocationMock
+    });
   });
 
   afterEach(() => {
-    // @ts-expect-error 'geolocation' is a read-only property
-    navigator.geolocation = realGeolocation;
+    Object.defineProperty(navigator, "geolocation", {
+      value: navigationGeolocationImplementation
+    });
   });
 
   it("should return initial coordinates", () => {

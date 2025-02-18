@@ -1,6 +1,6 @@
 import Highcharts from "highcharts";
 import HighchartsReact from "highcharts-react-official";
-import { FunctionComponent } from "react";
+import React, { FunctionComponent } from "react";
 import {
   FiveDaysForecastData,
   Forecast
@@ -128,7 +128,10 @@ export const FiveDaysForecast: FunctionComponent<{
           color: colorPalette[i + 1]
         }))
       }
-    ]
+    ],
+    accessibility: {
+      enabled: false
+    }
   };
 
   const dataIndices = createDataIndices(chartData);
@@ -187,7 +190,7 @@ export const FiveDaysForecast: FunctionComponent<{
 
   return (
     <div className={styles.fiveDays}>
-      <h2 className={styles.title}>Próximos días</h2>
+      <h2 className={styles.title}>Five days forecast</h2>
       <HighchartsReact highcharts={Highcharts} options={options} />
     </div>
   );

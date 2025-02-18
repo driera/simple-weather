@@ -19,13 +19,13 @@ Weather app using React + Typescript + CSS Modules + Vite
 * Call weather API depending on location coordinates, instead of city Id
 * Get user coordinates using navigator geolocation API
 * Add FiveDays prediction
+* Separate today & 5 days forecasts in different tabs
 
 ## TO DO
 * Add data fallback in case of returned error by API
 * Group FiveDays collection by date
 * Update test location
 * UI Animation Move sun vertically depending on time
-* Separate today & 5 days forecasts in different tabs
 * Add location search with google places api + [OpenWeather geocoding API](https://openweathermap.org/api/geocoding-api)
 * Store data (store it in localstorage creating a timestamp to renew the info past 10 minutes).
 * Deploy everything to netlify

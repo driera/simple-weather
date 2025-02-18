@@ -22,3 +22,33 @@
   );
   opacity: 0.75;
 }
+
+.header {
+  position: relative;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.navigation {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 72px;
+
+  :global(.active) {
+    border-bottom: 1px solid var(--light-color);
+  }
+}
+
+.link {
+  color: var(--light-color);
+
+  &:hover, &:focus {
+    color: var(--main-color);
+  }
+
+  &:global(.active) {
+    cursor: default;
+    color: inherit;
+    border-bottom: 1px solid var(--light-color);
+  }
+}

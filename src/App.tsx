@@ -1,15 +1,17 @@
 import React, { FunctionComponent, useEffect, useState } from "react";
 
 import { CurrentWeather } from "./components/CurrentWeather/CurrentWeather";
-import { CurrentWeatherData } from "./domain/current-weather-entity";
 import { FiveDaysForecast } from "./components/FiveDaysForecast/FiveDaysForecast";
+import { CurrentWeatherData } from "./domain/current-weather-entity";
 import { FiveDaysForecastData } from "./domain/five-days-forecast-entity";
 
+import { ErrorBoundary } from "./components/ErrorBoundary";
 import { WeatherApiClient } from "./repositories/weather-api-client";
 import { useGeoLocation } from "./useGeoLocation";
-import { ErrorBoundary } from "./components/ErrorBoundary";
 
 import styles from "./App.module.css";
+
+import { NavLink, Route, Routes } from "react-router";
 
 const App: FunctionComponent = () => {
   const [weatherData, setWeatherData] = useState<CurrentWeatherData | null>(
@@ -43,8 +45,26 @@ const App: FunctionComponent = () => {
     <ErrorBoundary>
       <section className={styles.weather}>
         <div className={styles.sun}></div>
-        <CurrentWeather weatherData={weatherData} />
-        <FiveDaysForecast fiveDaysData={fiveDaysData} />
+        <div className={styles.header}>
+          <nav className={styles.navigation}>
+            <NavLink className={styles.link} to="/">
+              Today
+            </NavLink>
+            <NavLink className={styles.link} to="/five">
+              Five Days
+            </NavLink>
+          </nav>
+        </div>
+        <Routes>
+          <Route
+            path="/"
+            element={<CurrentWeather weatherData={weatherData} />}
+          />
+          <Route
+            path="/five"
+            element={<FiveDaysForecast fiveDaysData={fiveDaysData} />}
+          />
+        </Routes>
       </section>
     </ErrorBoundary>
   );

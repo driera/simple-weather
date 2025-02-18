@@ -1,4 +1,4 @@
-import { FunctionComponent } from "react";
+import React, { FunctionComponent } from "react";
 import styles from "./CurrentWeather.module.css";
 import { CurrentIntro } from "./CurrentIntro";
 import { CurrentItem } from "./CurrentItem";

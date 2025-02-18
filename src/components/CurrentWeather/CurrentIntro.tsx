@@ -35,6 +35,7 @@ const CurrentIntro: FunctionComponent<CurrentIntroType> = ({
   return (
     <div className={styles.intro}>
       <div className={styles.header}>
+        <h2 className={styles.title}>Current weather</h2>
         <div className={styles.location}>{location}</div>
         <div className={styles.time}>{formattedTime()}</div>
       </div>
