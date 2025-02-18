@@ -2,7 +2,7 @@
 .five-days {
   position: relative;
   max-width: 1000px;
-  margin: 40px auto;
+  margin: 72px auto;
 }
 
 .list-item {
@@ -12,5 +12,6 @@
 
 .title {
   font-size: 20px;
-  margin-bottom: 72px;
+  margin-bottom: 24px;
+  text-align: center;
 }

@@ -43,9 +43,6 @@ const App: FunctionComponent = () => {
     <ErrorBoundary>
       <section className={styles.weather}>
         <div className={styles.sun}></div>
-        <div className={styles.header}>
-          <h1 className={styles.title}>Hoy</h1>
-        </div>
         <CurrentWeather weatherData={weatherData} />
         <FiveDaysForecast fiveDaysData={fiveDaysData} />
       </section>

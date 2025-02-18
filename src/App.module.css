@@ -22,14 +22,3 @@
   );
   opacity: 0.75;
 }
-
-.header {
-  position: relative;
-  max-width: 600px;
-  margin: 0 auto;
-}
-
-.title {
-  font-size: 20px;
-  margin-bottom: 72px;
-}
