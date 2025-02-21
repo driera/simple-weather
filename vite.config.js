@@ -5,7 +5,8 @@ import svgr from "vite-plugin-svgr";
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: "/simple-weather-react/",
+  // eslint-disable-next-line no-undef
+  base: process.env.NODE_ENV === "production" ? "/simple-weather-react/" : "/",
   plugins: [
     react(),
     svgr({

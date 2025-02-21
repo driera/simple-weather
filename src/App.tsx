@@ -41,27 +41,34 @@ const App: FunctionComponent = () => {
     fetchData();
   }, [coordinates]);
 
+  const BASE_PATH =
+    process.env.NODE_ENV === "production" ? "/simple-weather-react/" : "/";
+  const paths = {
+    CURRENT: BASE_PATH,
+    FIVE_DAYS: BASE_PATH + "five"
+  };
+
   return (
     <ErrorBoundary>
       <section className={styles.weather}>
         <div className={styles.sun}></div>
         <div className={styles.header}>
           <nav className={styles.navigation}>
-            <NavLink className={styles.link} to="/">
+            <NavLink className={styles.link} to={paths.CURRENT}>
               Today
             </NavLink>
-            <NavLink className={styles.link} to="/five">
+            <NavLink className={styles.link} to={paths.FIVE_DAYS}>
               Five Days
             </NavLink>
           </nav>
         </div>
         <Routes>
           <Route
-            path="/"
+            path={paths.CURRENT}
             element={<CurrentWeather weatherData={weatherData} />}
           />
           <Route
-            path="/five"
+            path={paths.FIVE_DAYS}
             element={<FiveDaysForecast fiveDaysData={fiveDaysData} />}
           />
         </Routes>
