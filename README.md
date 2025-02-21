@@ -20,7 +20,7 @@ Weather app using React + Typescript + CSS Modules + Vite
 * Get user coordinates using navigator geolocation API
 * Add FiveDays prediction
 * Separate today & 5 days forecasts in different tabs
-* Deploy everything to Github Pages
+* Deploy everything to Github Pages 
 
 ## TO DO
 * Give a try to [VisualCrossing Weather API](https://www.visualcrossing.com/weather-query-builder/)
