@@ -1,7 +1,7 @@
 .weather {
   position: relative;
   width: 100dvw;
-  height: 100%;
+  min-height: 100dvh;
   padding: 15px;
   background: linear-gradient(180deg, #10205b, #463d86, #9c5ca3);
 }
