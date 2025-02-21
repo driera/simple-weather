@@ -54,7 +54,7 @@ const App: FunctionComponent = () => {
         <div className={styles.sun}></div>
         <div className={styles.header}>
           <nav className={styles.navigation}>
-            <NavLink className={styles.link} to={paths.CURRENT}>
+            <NavLink end className={styles.link} to={paths.CURRENT}>
               Today
             </NavLink>
             <NavLink className={styles.link} to={paths.FIVE_DAYS}>
