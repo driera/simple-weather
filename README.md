@@ -20,15 +20,16 @@ Weather app using React + Typescript + CSS Modules + Vite
 * Get user coordinates using navigator geolocation API
 * Add FiveDays prediction
 * Separate today & 5 days forecasts in different tabs
+* Deploy everything to Github Pages
 
 ## TO DO
+* Give a try to [VisualCrossing Weather API](https://www.visualcrossing.com/weather-query-builder/)
 * Add data fallback in case of returned error by API
 * Group FiveDays collection by date
 * Update test location
 * UI Animation Move sun vertically depending on time
 * Add location search with google places api + [OpenWeather geocoding API](https://openweathermap.org/api/geocoding-api)
 * Store data (store it in localstorage creating a timestamp to renew the info past 10 minutes).
-* Deploy everything to netlify
 
 ## Available Scripts
 
