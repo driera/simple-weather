@@ -6,7 +6,7 @@ The app does take into account your browser's location to get weather data from 
 
 It uses [React router](https://reactrouter.com) to navigate between different views, and [Highcharts](https://www.highcharts.com) to represent the weather evolution within the next 5 days.
 
-The app has its own github workflow and get published on each deploy in [driera.github.io/simple-weather-react/](https://driera.github.io/simple-weather-react/)
+The app has its own github workflow and get published on each deploy in [driera.github.io/simple-weather/](https://driera.github.io/simple-weather/)
 
 
 TO DO

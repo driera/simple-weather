@@ -42,7 +42,7 @@ const App: FunctionComponent = () => {
   }, [coordinates]);
 
   const BASE_PATH =
-    process.env.NODE_ENV === "production" ? "/simple-weather-react/" : "/";
+    process.env.NODE_ENV === "production" ? "/simple-weather/" : "/";
   const paths = {
     CURRENT: BASE_PATH,
     FIVE_DAYS: BASE_PATH + "five"

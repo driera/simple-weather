@@ -1,9 +1,9 @@
 {
-  "name": "simple-weather-react",
+  "name": "simple-weather",
   "version": "0.1.0",
   "private": true,
   "type": "module",
-  "homepage": "https://driera.github.io/simple-weather-react/",
+  "homepage": "https://driera.github.io/simple-weather/",
   "dependencies": {
     "highcharts": "^12.1.2",
     "highcharts-react-official": "^3.2.1",
