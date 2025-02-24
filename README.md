@@ -54,7 +54,7 @@ The application follows a component-based architecture emphasizing:
 - **npm build**: Builds the app for production to the build folder
 
 ## 📱 Usage
-Visit the live demo at [driera.github.io/simple-weather/](driera.github.io/simple-weather/)
+Visit the live demo at [driera.github.io/simple-weather/](https://driera.github.io/simple-weather/)
 
 ## 📝 License
 This project is [MIT](LICENSE) licensed.
